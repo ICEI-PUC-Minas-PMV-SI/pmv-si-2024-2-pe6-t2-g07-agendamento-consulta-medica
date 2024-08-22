@@ -32,6 +32,19 @@ O público-alvo deste trabalho é composto principalmente por gestores e profiss
 
 # Especificações do Projeto
 
+Nesta seção serão abordados alguns elementos que embasarão o desenvolvimento do projeto.
+
+**Personas**
+
+A descrição de personas é construída por meio de características comportamentais e demográficas de usuários que representariam uma parcela dos clientes possíveis para o Sistema de Agendamento de Consultas Médicas na rede municipal de saúde do Município Alfa.
+
+**1. Maria da Silva**
+Maria da Silva, 55 anos, aposentada que tem 2 filhas e 7 netos. Atualmente mora sozinha na periferia do município Alfa. Ela utiliza um smartphone básico e tem pouca familiaridade com tecnologia. Maria precisa de um sistema de agendamento fácil de usar, com suporte para pessoas que não têm muita experiência com tecnologia. Ela frequentemente precisa de ajuda de suas netas para entender como utilizar sistemas online e preferiria um processo simplificado, talvez com suporte telefônico ou presencial. Tem dificuldade em acessar a internet e utilizar plataformas digitais, além de ter problemas de mobilidade que tornam difícil o deslocamento até as unidades de saúde. Tendo em vista esse contexto, ela quer garantir a realização de suas consultas médicas e exames sem grandes complicações e preferiria ter a opção de confirmar os agendamentos por telefone.
+
+**2. João dos Santos**
+João do Santos, 38 anos, é um operador de máquinas que mora na Zona rural do município Alfa e tem 2 filhos. Ele usa um smartphone moderno e tem alguma familiaridade com aplicativos. João precisa de um sistema de agendamento que permita marcar consultas com facilidade e que ofereça a opção de visualizar e alterar horários. Ele tem horários de trabalho irregulares de acordo com o clima e cultura a ser plantada ou colhida e precisa de flexibilidade para marcar e reagendar consultas. Um de seus desafios é acessar a internet na área rural que costuma ser instável, o que pode dificultar o acesso ao sistema online. Ele também pode ter dificuldade em encontrar horários de consulta que se encaixem em seu trabalho. Ele quer um sistema que permita acessar informações e realizar agendamentos mesmo com uma conexão de internet limitada e que seja eficiente para adaptar os horários de acordo com suas necessidades.
+
+
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
