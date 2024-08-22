@@ -11,7 +11,7 @@ Atualmente, muitas clínicas públicas enfrentam dificuldades na gestão de agen
 ### Objetivo geral:
 Desenvolver uma solução web e mobile eficiente e acessível para o agendamento de consultas médicas em uma clínica pública, com o intuito de otimizar o processo de marcação, melhorar a gestão de horários e reduzir o tempo de espera dos pacientes.
 
-### Objetivos específicos
+### Objetivos específicos:
 1.	Identificar as necessidades dos usuários: Realizar uma análise das necessidades e expectativas dos pacientes e profissionais de saúde em relação ao sistema de agendamento, garantindo que a solução atenda aos requisitos práticos e usuais do público-alvo.
 
 2.	Desenvolver uma interface amigável: Criar uma interface de usuário intuitiva e acessível, que facilite o uso do sistema por pessoas de diferentes idades e níveis de alfabetização digital, promovendo uma experiência positiva e eficiente.
