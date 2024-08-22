@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# CONSULTA FÁCIL
 
 `CURSO: Sistemas de Informação`
 
@@ -6,8 +6,7 @@
 
 `SEMESTRE: 6º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
-
+O Consulta Fácil é uma solução web desenvolvida para facilitar o agendamento de consultas médicas em clínicas públicas. Diante dos desafios enfrentados no acesso a rede pública de saúde, como longas filas de espera e dificuldades na marcação de consultas, o Consulta Fácil busca oferecer uma interface intuitiva e acessível, permitindo que os pacientes agendem seus atendimentos de forma mais rápida e eficiente. O objetivo principal é otimizar o processo de agendamento, melhorar a gestão dos horários disponíveis e reduzir o índice de absenteísmo, contribuindo para um atendimento mais eficaz e satisfatório na rede pública de saúde.
 ## Integrantes
 
 * Felipe Moreira de Oliveira
