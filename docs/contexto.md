@@ -56,6 +56,11 @@ Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periféri
 
 ## **Histórias de Usuários**
 
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|--------------------|------------------------------------|----------------------------------------|
+
+
+
 
 ## Requisitos
 
