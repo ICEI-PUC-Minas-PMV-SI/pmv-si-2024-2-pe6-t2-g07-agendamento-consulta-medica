@@ -54,6 +54,7 @@ Ana Paula Costa, 28 anos, é professora e mora em um bairro urbano de classe mé
 
 Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periférico do município Alfa. Ele possui um smartphone e usa aplicativos para gestão do seu negócio e questões pessoais. Seu trabalho exige flexibilidade e ele tem uma rotina imprevisível, o que pode tornar difícil a programação fixa de consultas. Também pode ter dificuldades em encontrar um tempo para lidar com questões administrativas. Carlos precisa de um sistema que permita agendar consultas de forma prática, com opções de horários variados que se encaixem na sua agenda de trabalho. Ele também precisa de um sistema que ofereça atualizações sobre o status dos seus agendamentos e notificações sobre possíveis mudanças ou confirmações.
 
+## **Histórias de Usuários**
 
 
 ## Requisitos
