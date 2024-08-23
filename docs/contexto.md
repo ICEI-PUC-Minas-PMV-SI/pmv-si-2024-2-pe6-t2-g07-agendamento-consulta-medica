@@ -56,6 +56,8 @@ Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periféri
 
 ## **Histórias de Usuários**
 
+Histórias de usuários são uma das técnicas utilizadas para capturar requisitos e necessidades dos usuários de forma clara e compreensível. Elas descrevem funcionalidades ou características desejadas de um sistema do ponto de vista do usuário final. 
+
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |Todos os usuários pacientes   | Receber notificações de confirmação de agendamento para consulta médica|Proporcionar controle da agenda dos usuários pacientes|
