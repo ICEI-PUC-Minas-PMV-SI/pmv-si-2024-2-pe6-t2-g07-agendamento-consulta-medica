@@ -34,7 +34,7 @@ O público-alvo deste trabalho é composto principalmente por gestores e profiss
 
 Nesta seção serão abordados alguns elementos que embasarão o desenvolvimento do projeto.
 
-# **Personas**
+## **Personas**
 
 A descrição de personas é construída por meio de características comportamentais e demográficas de usuários que representariam uma parcela dos clientes possíveis para o Sistema de Agendamento de Consultas Médicas na rede municipal de saúde do Município Alfa.
 
