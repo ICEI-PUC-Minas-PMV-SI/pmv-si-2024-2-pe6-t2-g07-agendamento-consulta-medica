@@ -39,15 +39,19 @@ Nesta seção serão abordados alguns elementos que embasarão o desenvolvimento
 A descrição de personas é construída por meio de características comportamentais e demográficas de usuários que representariam uma parcela dos clientes possíveis para o Sistema de Agendamento de Consultas Médicas na rede municipal de saúde do Município Alfa.
 
 **1. Maria da Silva**
+
 Maria da Silva, 55 anos, aposentada que tem 2 filhas e 7 netos. Atualmente mora sozinha na periferia do município Alfa. Ela utiliza um smartphone básico e tem pouca familiaridade com tecnologia. Ela frequentemente precisa de ajuda de suas netas para entender como utilizar sistemas online e preferiria um processo simplificado, talvez com suporte telefônico ou presencial. Tem dificuldade em acessar a internet e utilizar plataformas digitais, além de ter problemas de mobilidade que tornam difícil o deslocamento até as unidades de saúde. Tendo em vista esse contexto, Maria precisa de um sistema de agendamento fácil de usar, com suporte para pessoas que não têm muita experiência com tecnologia, ela quer garantir a realização de suas consultas médicas e exames sem grandes complicações e preferiria ter a opção de confirmar os agendamentos por telefone.
 
 **2. João dos Santos**
+
 João do Santos, 38 anos, é um operador de máquinas que mora na Zona rural do município Alfa e tem 2 filhos. Ele usa um smartphone moderno e tem alguma familiaridade com aplicativos. tem horários de trabalho irregulares de acordo com o clima e cultura a ser plantada ou colhida e precisa de flexibilidade para marcar e reagendar consultas. Um de seus desafios é acessar a internet na área rural que costuma ser instável, o que pode dificultar o acesso ao sistema online. Ele também pode ter dificuldade em encontrar horários de consulta que se encaixem em seu trabalho. João precisa de um sistema de agendamento que permita marcar consultas com facilidade e que ofereça a opção de visualizar e alterar horários, permitindo ainda acessar informações e realizar agendamentos mesmo com uma conexão de internet limitada e que seja eficiente para adaptar os horários de acordo com suas necessidades.
 
 **3. Ana Paula Costa**
+
 Ana Paula Costa, 28 anos, é professora e mora em um bairro urbano de classe média no município Alfa. Ela usa regularmente um laptop e um smartphone, e é bastante confortável com tecnologia. Não possui grandes dificuldades com tecnologia, mas pode se frustrar com sistemas lentos ou com dificuldades na navegação, especialmente se precisar encontrar informações específicas rapidamente. Ana Paula busca um sistema que ofereça informações detalhadas sobre os serviços disponíveis, a possibilidade de visualizar a disponibilidade de médicos, agendar consultas de forma rápida e prática, além de oferecer recursos como lembretes de consultas e acesso a informações sobre médicos, bem como históricos de consultas já realizadas.
 
 **4. Carlos Pereira**
+
 Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periférico do município Alfa. Ele possui um smartphone e usa aplicativos para gestão do seu negócio e questões pessoais. Seu trabalho exige flexibilidade e ele tem uma rotina imprevisível, o que pode tornar difícil a programação fixa de consultas. Também pode ter dificuldades em encontrar um tempo para lidar com questões administrativas. Carlos precisa de um sistema que permita agendar consultas de forma prática, com opções de horários variados que se encaixem na sua agenda de trabalho. Ele também precisa de um sistema que ofereça atualizações sobre o status dos seus agendamentos e notificações sobre possíveis mudanças ou confirmações.
 
 
