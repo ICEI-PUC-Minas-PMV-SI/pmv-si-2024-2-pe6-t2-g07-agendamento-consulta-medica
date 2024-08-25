@@ -21,13 +21,13 @@ O Consulta Fácil é uma solução web desenvolvida para facilitar o agendamento
 
 # Planejamento
 
-| Etapa         | Atividades |
-|  :----:   | ----------- |
-| ETAPA 1         |[Documentação de Contexto](docs/contexto.md) <br> |
-| ETAPA 2         |[Planejar, desenvolver e gerenciar APIs e Web Services](docs/backend-apis.md) <br> |
-| ETAPA 3         |[Planejar, desenvolver e gerenciar uma aplicação Web](docs/frontend-web.md) |
-| ETAPA 4        |[Planejar, desenvolver e gerenciar uma aplicação Móvel](docs/frontend-mobile.md) <br>  |
-| ETAPA 5         | [Apresentação](presentation/README.md) |
+|  Etapa  | Atividades                                                                            |
+| :-----: | ------------------------------------------------------------------------------------- |
+| ETAPA 1 | [Documentação de Contexto](docs/contexto.md) <br>                                     |
+| ETAPA 2 | [Planejar, desenvolver e gerenciar APIs e Web Services](docs/backend-apis.md) <br>    |
+| ETAPA 3 | [Planejar, desenvolver e gerenciar uma aplicação Web](docs/frontend-web.md)           |
+| ETAPA 4 | [Planejar, desenvolver e gerenciar uma aplicação Móvel](docs/frontend-mobile.md) <br> |
+| ETAPA 5 | [Apresentação](presentation/README.md)                                                |
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.

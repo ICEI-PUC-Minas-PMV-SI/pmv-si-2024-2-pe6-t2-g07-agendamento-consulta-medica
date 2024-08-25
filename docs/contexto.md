@@ -1,7 +1,6 @@
 # Introdução
 
 Com o avanço das tecnologias da informação e comunicação, as soluções digitais têm se mostrado cada vez mais eficazes na otimização de processos e na melhoria do acesso a serviços essenciais. No contexto da saúde pública, a demanda por sistemas que facilitem o agendamento de consultas médicas é crescente, especialmente em Unidades de Pronto Atendimento (UPAs) , onde a procura por atendimentos é intensa e constante. Este trabalho propõe o desenvolvimento de uma solução de um sistema web e mobile voltado para o agendamento de consultas médicas em uma clínica de saúde pública, visando otimizar o processo e garantir maior acessibilidade e eficiência no atendimento.
-
 ## Problema
 
 Atualmente, muitas clínicas públicas enfrentam dificuldades na gestão de agendamentos de consultas médicas, o que resulta em longas filas de espera, dificuldades para marcar consultas e, em alguns casos, na perda de atendimentos por falta de organização e transparência nos processos. O sistema de agendamento tradicional, que geralmente envolve telefonemas ou comparecimento presencial, apresenta várias limitações, como a indisponibilidade de horários, a falta de informações em tempo real e a sobrecarga dos profissionais administrativos. Essas dificuldades impactam diretamente a qualidade do atendimento prestado aos pacientes, que frequentemente enfrentam atrasos e complicações para conseguir uma consulta médica.
