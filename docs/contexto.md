@@ -82,7 +82,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| Permitir o cancelamento de consultas   | ALTA |
 |RF-004| Permitir a verificação do status das consultas   | MÉDIA |
 |RF-005| Permitir a verificação do histórico das consultas   | MÉDIA |
-|RF-006| Enviar notificações push e SMS   | BAIXA |
 
 ### Requisitos não Funcionais
 
