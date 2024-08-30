@@ -101,7 +101,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 # Catálogo de Serviços
 
 O catálogo de serviços tem como objetivo organizar, esclarecer e listar as funcionalidades e ferramentas disponíveis para uso na ferramenta.
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/Cat%C3%A1logo%20de%20servi%C3%A7os.png?raw=true)
 
 # Arquitetura da Solução
 
