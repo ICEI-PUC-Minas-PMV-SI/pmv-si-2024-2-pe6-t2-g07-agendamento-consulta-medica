@@ -100,7 +100,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+O catálogo de serviços tem como objetivo organizar, esclarecer e listar as funcionalidades e ferramentas disponíveis para uso na ferramenta.
+![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
 
 # Arquitetura da Solução
 
