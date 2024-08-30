@@ -82,6 +82,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| Permitir o cancelamento de consultas   | ALTA |
 |RF-004| Permitir a verificação do status das consultas   | MÉDIA |
 |RF-005| Permitir a verificação do histórico das consultas   | MÉDIA |
+|RF-006| Enviar notificações registradas pelo usuário   | MÉDIA | João Paulo Maia
 
 ### Requisitos não Funcionais
 
@@ -89,6 +90,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA |
+|RNF-003| O sistema deve comportar múltiplos usuários acessando simultaneamente |  BAIXA |
 
 ## Restrições
 
@@ -97,6 +99,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
+|02| O projeto deverá ter uma versão web |
+|03| O projeto deverá ter uma versão mobile |
 
 # Catálogo de Serviços
 
