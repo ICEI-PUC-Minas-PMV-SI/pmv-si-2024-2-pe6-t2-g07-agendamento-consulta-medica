@@ -88,9 +88,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA |
-|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente |  BAIXA |
+|RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis. | MÉDIA | 
+|RNF-002| Deve processar requisições do usuário em no máximo 3s. |  BAIXA |
+|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente. |  BAIXA |
 
 ## Restrições
 
@@ -98,9 +98,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| O projeto deverá ter uma versão web |
-|03| O projeto deverá ter uma versão mobile |
+|01| O projeto deverá ser entregue até o final do semestre. |
+|02| O projeto deverá ter uma versão web. |
+|03| O projeto deverá ter uma versão mobile. |
 
 # Catálogo de Serviços
 
