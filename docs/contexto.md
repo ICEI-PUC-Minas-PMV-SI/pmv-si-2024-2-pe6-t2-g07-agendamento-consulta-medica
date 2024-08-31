@@ -59,8 +59,8 @@ Histórias de usuários são uma das técnicas utilizadas para capturar requisit
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Todos os usuários pacientes   | Receber notificações de confirmação de agendamento para consulta médica|Proporcionar controle da agenda dos usuários pacientes|
-|Todos os usuários pacientes   | Receber notificação de confirmação da consulta 1 dia antes|Evitar não comparecimento de pacientes por esquecimento|
+|Paciente   | Receber notificações de confirmação de agendamento para consulta médica|Ter controle dos agendamentos |
+|Paciente   | Receber notificação de lembrete na véspera da consulta|Evitar não comparecimento por esquecimento|
 |Maria da Silva (Usuário paciente)|Receber confirmação de agendamento por SMS   |Confirmação de que o agendamento foi realizado com sucesso. |
 |João dos Santos (Usuário paciente)|Alterar dia e horário do agendamento|Adequar ao horário do usuário paciente|
 |Ana Paula Costa (Usuário paciente)|Consultar histórico das consultas agendadas|Manter frequência de acompanhamento médico no cuidado à saúde|  
