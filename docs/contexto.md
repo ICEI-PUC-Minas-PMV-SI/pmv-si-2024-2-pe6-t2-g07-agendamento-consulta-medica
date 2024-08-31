@@ -71,17 +71,21 @@ Histórias de usuários são uma das técnicas utilizadas para capturar requisit
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+
+As técnicas utilizadas para a priorização dos requisitos foram a **MoSCoW (Must, Should, Could, Won't)** combinada com o **Método de Pareto**.
+
+Assim, foram listados os requisitos funcionais considerados imperativos, aconselháveis, possíveis e inviáveis do projeto, e dentre eles foram selecionados aqueles que combinam o ponto ótimo entre esforço e resultado na entrega final.
 
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade | Responsável |
 |------|-----------------------------------------|----|-------- |
-|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | 
-|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA |
-|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA |
-|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA |
-|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA |
+|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | Rafael
+|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA | Geocacio
+|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA | Guilherme
+|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA | João
+|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA | Felipe
 
 
 ### Requisitos não Funcionais
