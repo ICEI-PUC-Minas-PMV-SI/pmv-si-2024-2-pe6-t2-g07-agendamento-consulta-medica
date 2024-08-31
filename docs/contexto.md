@@ -77,12 +77,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade | Responsável |
 |------|-----------------------------------------|----|-------- |
-|RF-001| Permitir a marcação de consultas | ALTA | 
-|RF-002| Permitir o reagendamento de consultas   | ALTA |
-|RF-003| Permitir o cancelamento de consultas   | ALTA |
-|RF-004| Permitir a verificação do status das consultas   | MÉDIA |
-|RF-005| Permitir a verificação do histórico das consultas   | MÉDIA |
-|RF-006| Enviar notificações registradas pelo usuário   | MÉDIA | João Paulo Maia
+|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | 
+|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA |
+|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA |
+|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA |
+|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
@@ -90,7 +90,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA |
-|RNF-003| O sistema deve comportar múltiplos usuários acessando simultaneamente |  BAIXA |
+|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente |  BAIXA |
 
 ## Restrições
 
