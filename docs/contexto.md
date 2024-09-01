@@ -114,9 +114,36 @@ O catálogo de serviços tem como objetivo organizar, esclarecer e listar as fun
 
 # Arquitetura da Solução
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+**Objetivo**: Descrever a arquitetura de software distribuído em três camadas para sistema de agendamento de consultas médicas para utilização no Sistema Único de Saúde.
 
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
+**Escopo**: Aplicação Web e mobile para agendamento e gestão de consultas em uma clínica de saúde pública.
+
+**Detalhamento das camadas:**
+
+**Camada de Apresentação:**
+
+**Descrição:** Responsável pela interação com o usuário, seja ele interno à clínica (Profissional de Saúde ou Administrador) ou externo (Paciente/usuário do sistema de saúde).
+**Tecnologias utilizadas:** HTML, CSS, JavaScript, Framework para aplicativo móvel
+Responsabilidades: Exibir dados de pacientes, agendamentos, prontuários médicos, coletar entradas do usuário, enviar solicitações à camada de aplicação. Nesta camada estarão os requisitos funcionais e do sistema, como por exemplo:
+•	Cadastrar novo perfil;
+•	Login (Autenticação de Usuário/Controle de Acesso);
+•	Configuração de Perfil de acordo com o usuário (Profissional de Saúde, Usuário/Paciente e Administrador);
+•	Agendamento de consulta;
+•	Acompanhamento do Agendamento;
+
+**Camada de Aplicação:**
+**Descrição:** Contém a lógica de negócio do sistema de agendamento de consultas médicas.
+**Tecnologias:** Java, PHP.
+**Responsabilidades:** Processar dados de pacientes, aplicar regras de negócios hospitalares, interagir com a camada de dados.
+
+**Camada de Dados:**
+**Descrição:**  Realiza a gestão dos dados da aplicação.
+**Tecnologias:** SQL Server;
+**Responsabilidades:** Armazenar dados de pacientes, consultas, prontuários médicos, executar consultas, garantir a integridade dos dados.
+
+**Ilustração da arquitetura:**
+
+![arq](./img/arquitetura.jpg)
 
 
 ## Tecnologias Utilizadas
