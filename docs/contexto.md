@@ -81,20 +81,22 @@ Assim, foram listados os requisitos funcionais considerados imperativos, aconsel
 
 |ID    | Descrição do Requisito  | Prioridade | Responsável |
 |------|-----------------------------------------|----|-------- |
-|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | Rafael
-|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA | Geocacio
-|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA | Guilherme
-|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA | João
-|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA | Felipe
+|RF-001| O sistema deve permitir o cadastro de diferentes tipos de usuários (pacientes, médicos e administradores) com validação de dados e envio de confirmação por e-mail. | ALTA | Rafael
+|RF-002| O sistema deve permitir o login seguro de usuários com diferentes níveis de permissão.  | ALTA | Geocacio
+|RF-003| O sistema deve permitir que os usuários marquem, visualizem e gerenciem consultas, com atualizações em tempo real e notificações automáticas sobre qualquer alteração no status das consultas. | ALTA | Guilherme
+|RF-004| O sistema deve enviar lembretes automáticos e personalizáveis de consultas por e-mail e SMS para pacientes e médicos, com opções de configuração de horários de envio. | MÉDIA | João
+|RF-005| O sistema deve gerar relatórios detalhados sobre consultas agendadas, canceladas e realizadas, com filtros interativos, acessíveis aos usuários. | MÉDIA | Felipe
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis. | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s. |  BAIXA |
-|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente. |  BAIXA |
+|RNF-001| A interface deve ser intuitiva, acessível e inclusiva, projetada para usuários com diferentes níveis de familiaridade com tecnologia. | ALTA | 
+|RNF-002| O sistema deve garantir a segurança dos dados pessoais dos usuários em conformidade com a LGPD. | ALTA | 
+|RNF-003| O sistema deve ser responsivo para rodar em dispositivos móveis. | MÉDIA | 
+|RNF-004| Deve processar requisições do usuário em no máximo 3s. |  BAIXA |
+|RNF-005| O sistema deve comportar ao menos 300 usuários acessando simultaneamente. |  BAIXA |
 
 ## Restrições
 
