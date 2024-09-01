@@ -124,11 +124,16 @@ O catálogo de serviços tem como objetivo organizar, esclarecer e listar as fun
 
 **Descrição:** Responsável pela interação com o usuário, seja ele interno à clínica (Profissional de Saúde ou Administrador) ou externo (Paciente/usuário do sistema de saúde).
 **Tecnologias utilizadas:** HTML, CSS, JavaScript, Framework para aplicativo móvel
-Responsabilidades: Exibir dados de pacientes, agendamentos, prontuários médicos, coletar entradas do usuário, enviar solicitações à camada de aplicação. Nesta camada estarão os requisitos funcionais e do sistema, como por exemplo:
+**Responsabilidades:** Exibir dados de pacientes, agendamentos, prontuários médicos, coletar entradas do usuário, enviar solicitações à camada de aplicação. Nesta camada estarão os requisitos funcionais e do sistema, como por exemplo:
+
 •	Cadastrar novo perfil;
+
 •	Login (Autenticação de Usuário/Controle de Acesso);
+
 •	Configuração de Perfil de acordo com o usuário (Profissional de Saúde, Usuário/Paciente e Administrador);
+
 •	Agendamento de consulta;
+
 •	Acompanhamento do Agendamento;
 
 **Camada de Aplicação:**
