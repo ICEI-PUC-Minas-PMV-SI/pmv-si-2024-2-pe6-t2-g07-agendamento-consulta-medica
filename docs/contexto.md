@@ -43,15 +43,15 @@ Maria da Silva, 55 anos, aposentada que tem 2 filhas e 7 netos. Atualmente mora 
 
 **2. João dos Santos**
 
-João do Santos, 38 anos, é um operador de máquinas que mora na Zona rural do município Alfa e tem 2 filhos. Ele usa um smartphone moderno e tem alguma familiaridade com aplicativos. Tem horários de trabalho irregulares de acordo com o clima e cultura a ser plantada ou colhida e precisa de flexibilidade para marcar e reagendar consultas. Um de seus desafios é acessar a internet na área rural, que costuma ser instável, o que pode dificultar o acesso ao sistema online. Ele também pode ter dificuldade em encontrar horários de consulta que se encaixem em seu trabalho. João precisa de um sistema de agendamento que permita marcar consultas com facilidade e que ofereça a opção de visualizar e alterar horários, permitindo ainda acessar informações e realizar agendamentos mesmo com uma conexão de internet limitada e que seja eficiente para adaptar os horários de acordo com suas necessidades.
+João do Santos, 38 anos, é um operador de máquinas que mora na Zona rural do município Alfa e tem 2 filhos. Ele usa um smartphone moderno e tem alguma familiaridade com aplicativos. Tem horários de trabalho irregulares de acordo com o clima e cultura a ser plantada ou colhida e precisa de flexibilidade para marcar e reagendar consultas. Um de seus desafios é acessar a internet na área rural, que costuma ser instável, o que pode dificultar o acesso ao sistema online. Ele também pode ter dificuldade em encontrar horários de consulta que se encaixem em sua rotina de trabalho. João precisa de um sistema de agendamento que permita marcar consultas com facilidade e que ofereça a opção de visualizar e alterar horários, permitindo ainda acessar informações e realizar agendamentos mesmo com uma conexão de internet limitada e que seja eficiente para adaptar os horários de acordo com suas necessidades.
 
 **3. Ana Paula Costa**
 
-Ana Paula Costa, 28 anos, é professora e mora em um bairro urbano de classe média no município Alfa. Ela usa regularmente um laptop e um smartphone, e é bastante confortável com tecnologia. Não possui grandes dificuldades com tecnologia, mas pode se frustrar com sistemas lentos ou com dificuldades na navegação, especialmente se precisar encontrar informações específicas rapidamente. Ana Paula busca um sistema que ofereça informações detalhadas sobre os serviços disponíveis, a possibilidade de visualizar a disponibilidade de médicos, agendar consultas de forma rápida e prática, além de oferecer recursos como lembretes de consultas e acesso a informações sobre médicos, bem como históricos de consultas já realizadas.
+Ana Paula Costa, 28 anos, é professora e mora em um bairro urbano de classe média no município Alfa. Ela usa regularmente um laptop e um smartphone, e se sente bastante confortável com tecnologia. Não possui grandes dificuldades com tecnologia, mas pode se frustrar com sistemas lentos ou com dificuldades na navegação, especialmente se precisar encontrar informações específicas rapidamente. Ana Paula busca um sistema que ofereça informações detalhadas sobre os serviços disponíveis, a possibilidade de visualizar a disponibilidade de médicos, agendar consultas de forma rápida e prática, além de oferecer recursos como lembretes de consultas e acesso a informações sobre médicos, bem como históricos de consultas já realizadas.
 
 **4. Carlos Pereira**
 
-Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periférico do município Alfa. Ele possui um smartphone e usa aplicativos para gestão do seu negócio e questões pessoais. Seu trabalho exige flexibilidade e ele tem uma rotina imprevisível, o que pode tornar difícil a programação fixa de consultas. Também pode ter dificuldades em encontrar um tempo para lidar com questões administrativas. Carlos precisa de um sistema que permita agendar consultas de forma prática, com opções de horários variados que se encaixem na sua agenda de trabalho. Ele também precisa de um sistema que ofereça atualizações sobre o status dos seus agendamentos e notificações sobre possíveis mudanças ou confirmações.
+Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periférico do município Alfa. Ele possui um smartphone e usa aplicativos para gestão do seu negócio e questões pessoais. Seu trabalho exige flexibilidade e ele tem uma rotina imprevisível, o que pode tornar difícil a programação fixa de consultas. Também pode ter dificuldades em encontrar tempo para lidar com questões administrativas. Carlos precisa de um sistema que permita agendar consultas de forma prática, com opções de horários variados que se encaixem na sua agenda de trabalho. Ele também precisa de um sistema que ofereça atualizações sobre o status dos seus agendamentos e notificações sobre possíveis mudanças ou confirmações.
 
 ## **Histórias de Usuários**
 
@@ -59,8 +59,8 @@ Histórias de usuários são uma das técnicas utilizadas para capturar requisit
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Todos os usuários pacientes   | Receber notificações de confirmação de agendamento para consulta médica|Proporcionar controle da agenda dos usuários pacientes|
-|Todos os usuários pacientes   | Receber notificação de confirmação da consulta 1 dia antes|Evitar não comparecimento de pacientes por esquecimento|
+|Paciente   | Receber notificações de confirmação de agendamento para consulta médica|Ter controle dos agendamentos |
+|Paciente   | Receber notificação de lembrete na véspera da consulta|Evitar não comparecimento por esquecimento|
 |Maria da Silva (Usuário paciente)|Receber confirmação de agendamento por SMS   |Confirmação de que o agendamento foi realizado com sucesso. |
 |João dos Santos (Usuário paciente)|Alterar dia e horário do agendamento|Adequar ao horário do usuário paciente|
 |Ana Paula Costa (Usuário paciente)|Consultar histórico das consultas agendadas|Manter frequência de acompanhamento médico no cuidado à saúde|  
@@ -71,26 +71,30 @@ Histórias de usuários são uma das técnicas utilizadas para capturar requisit
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+
+As técnicas utilizadas para a priorização dos requisitos foram a **MoSCoW (Must, Should, Could, Won't)** combinada com o **Método de Pareto**.
+
+Assim, foram listados os requisitos funcionais considerados imperativos, aconselháveis, possíveis e inviáveis do projeto, e dentre eles foram selecionados aqueles que combinam o ponto ótimo entre esforço e resultado na entrega final.
 
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade | Responsável |
 |------|-----------------------------------------|----|-------- |
-|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | 
-|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA |
-|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA |
-|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA |
-|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA |
+|RF-001| Permitir login seguro para pacientes e profissionais de saúde, com gerenciamento de perfis. | ALTA | Rafael
+|RF-002| Oferecer visualização e seleção de horários em tempo real para agendamento de consultas.  | ALTA | Geocacio
+|RF-003| Permitir que os pacientes alterem ou cancelem consultas diretamente no sistema.  | ALTA | Guilherme
+|RF-004| Enviar notificações automáticas de confirmação, lembretes e avisos de cancelamento.  | MÉDIA | João
+|RF-005| Disponibilizar acesso ao histórico de consultas e informações médicas anteriores.   | MÉDIA | Felipe
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA |
-|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente |  BAIXA |
+|RNF-001| O sistema deve ser responsivo para rodar em dispositivos móveis. | MÉDIA | 
+|RNF-002| Deve processar requisições do usuário em no máximo 3s. |  BAIXA |
+|RNF-003| O sistema deve comportar ao menos 300 usuários acessando simultaneamente. |  BAIXA |
 
 ## Restrições
 
@@ -98,9 +102,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| O projeto deverá ter uma versão web |
-|03| O projeto deverá ter uma versão mobile |
+|01| O projeto deverá ser entregue até o final do semestre. |
+|02| O projeto deverá ter uma versão web. |
+|03| O projeto deverá ter uma versão mobile. |
 
 # Catálogo de Serviços
 
