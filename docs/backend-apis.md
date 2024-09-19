@@ -1,14 +1,15 @@
 # APIs e Web Services
 
-O planejamento de uma aplicação de APIS Web é uma etapa fundamental para o sucesso do projeto. Ao planejar adequadamente, você pode evitar muitos problemas e garantir que a sua API seja segura, escalável e eficiente.
-
-Aqui estão algumas etapas importantes que devem ser consideradas no planejamento de uma aplicação de APIS Web.
+Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mobile) foi criada a API que será apresentada nos próximos tópicos, juntamente com a arquitetura que são cruciais para garantir eficiência, escalabilidade e segurança da solução a ser desenvolvida.
 
 [Inclua uma breve descrição do projeto.]
 
 ## Objetivos da API
 
-O primeiro passo é definir os objetivos da sua API. O que você espera alcançar com ela? Você quer que ela seja usada por clientes externos ou apenas por aplicações internas? Quais são os recursos que a API deve fornecer?
+1. Facilitar a Integração: Proporcionar uma comunicação eficiente e consistente entre a aplicação web e mobile do sistema de agendamento.
+2. Garantir Segurança: Assegurar a proteção dos dados dos usuários e a integridade das operações realizadas através da API.
+3. Fornecer Dados em Tempo Real: Garantir que os usuários recebam atualizações instantâneas sobre consultas e horários disponíveis.
+4. Escalabilidade e Desempenho: Garantir que a API seja capaz de lidar com um grande volume de requisições simultâneas, mantendo um desempenho estável.
 
 [Inclua os objetivos da sua api.]
 
