@@ -15,7 +15,7 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 
 ## Arquitetura
 
-[Descrição da arquitetura das APIs, incluindo os componentes e suas interações.]
+![arq](.docs/img/Diagrama de Classe - Consulta Fácil.png)
 
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
