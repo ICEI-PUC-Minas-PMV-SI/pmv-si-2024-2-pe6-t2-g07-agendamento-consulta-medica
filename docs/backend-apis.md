@@ -2,7 +2,6 @@
 
 Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mobile) foi criada a API que será apresentada nos próximos tópicos, juntamente com a arquitetura que são cruciais para garantir eficiência, escalabilidade e segurança da solução a ser desenvolvida.
 
-[Inclua uma breve descrição do projeto.]
 
 ## Objetivos da API
 
@@ -10,8 +9,6 @@ Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mo
 2. Garantir Segurança: Assegurar a proteção dos dados dos usuários e a integridade das operações realizadas através da API.
 3. Fornecer Dados em Tempo Real: Garantir que os usuários recebam atualizações instantâneas sobre consultas e horários disponíveis.
 4. Escalabilidade e Desempenho: Garantir que a API seja capaz de lidar com um grande volume de requisições simultâneas, mantendo um desempenho estável.
-
-[Inclua os objetivos da sua api.]
 
 
 ## Arquitetura
