@@ -15,7 +15,7 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 
 ## Arquitetura
 
-![Diagrama de Classe]([docs/img/Diagrama de Classe - Consulta Fácil.png](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/18cbc7a17c493a998a6551dda77915471d07c4b3/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png))
+![arq]([docs/img/Diagrama de Classe - Consulta Fácil.png](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/18cbc7a17c493a998a6551dda77915471d07c4b3/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png))
 
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
