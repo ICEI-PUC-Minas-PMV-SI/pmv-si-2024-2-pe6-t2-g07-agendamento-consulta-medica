@@ -35,9 +35,11 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 
 ## Tecnologias Utilizadas
 
-Existem muitas tecnologias diferentes que podem ser usadas para desenvolver APIs Web. A tecnologia certa para o seu projeto dependerá dos seus objetivos, dos seus clientes e dos recursos que a API deve fornecer.
-
-[Lista das tecnologias principais que serão utilizadas no projeto.]
+- C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
+- Visual Studio: IDE utlizada junto ao ASP .NET Core;
+Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
+- Postman: Utilizado para testes de requisição para a API.
+- GitHub: Plataforma utilizada para versionamento de versões.
 
 ## API Endpoints
 
