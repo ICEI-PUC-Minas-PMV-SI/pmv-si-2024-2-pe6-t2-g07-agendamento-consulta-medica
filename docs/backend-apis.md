@@ -16,6 +16,31 @@ A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler,
 
 ## Arquitetura
 
+GestaoAgendamentos.Web (Interface Web):
+    Responsável por fornecer a interface do usuário.
+    Consome a API Gateway para realizar operações CRUD de agendamentos, histórico de consultas e receber notificações.
+GestaoAgendamentos.API (API Gateway):
+    Ponto de entrada único para todas as requisições da interface web.
+    Roteia as requisições para o microsserviço apropriado.
+    Implementa autenticação e autorização.
+GestaoAgendamentos.Produto (Microsserviço):
+    Gerencia as operações relacionadas as consultas (CRUD).
+    Interage com o banco de dados para persistir os dados.
+    Publica eventos no RabbitMQ após operações de atualização no banco de dados.
+GestaoAgendamentos.Relatorios (Microsserviço):
+    Responsável por gerar e disponibilizar relatórios de consultas agendadas.
+    Consome mensagens do RabbitMQ para atualizar os relatórios em background.
+RabbitMQ (Message Broker):
+    Sistema de mensageria para comunicação assíncrona entre os microsserviços.
+    Utilizado para propagar as atualizações de agendamentos do microsserviço "Produto" para o "Relatórios".
+SQL Server (Banco de Dados):
+    Armazena os dados das consultas agendadas e canceladas.
+
+
+
+
+
+
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/830305ee8f5c5be317d29d6fb642085ecd8659fc/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Modelagem da Aplicação
