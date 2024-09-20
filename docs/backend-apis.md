@@ -5,10 +5,13 @@ Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mo
 
 ## Objetivos da API
 
+Os objetivos da API proposta envolve sua utilização apenas por aplicações internas.
+
 1. Facilitar a Integração: Proporcionar uma comunicação eficiente e consistente entre a aplicação web e mobile do sistema de agendamento.
-2. Garantir Segurança: Assegurar a proteção dos dados dos usuários e a integridade das operações realizadas através da API.
-3. Fornecer Dados em Tempo Real: Garantir que os usuários recebam atualizações instantâneas sobre consultas e horários disponíveis.
-4. Escalabilidade e Desempenho: Garantir que a API seja capaz de lidar com um grande volume de requisições simultâneas, mantendo um desempenho estável.
+A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler, Atualizar, Excluir), abrangendo recursos como usuários, agendamentos e notificações. A consistência nas respostas e nos formatos de dados será essencial para garantir a integração suave entre os sistemas.
+2. Implementar um sistema de autenticação robusto, como o OAuth 2.0, além de criptografar dados sensíveis de forma a garantir a segurança, assegurando a proteção dos dados dos usuários e a integridade das operações realizadas através da API.
+3. Fornecer Dados em Tempo Real, garantindo que os usuários recebam atualizações instantâneas sobre consultas e horários disponíveis.
+4. Escalabilidade e Desempenho: Garantir que a API seja capaz de lidar com um grande volume de requisições simultâneas (agendamento e verificar as consultas agendadas), mantendo um desempenho estável, conforme número de profissionais e centros de saúde utilizem a ferramenta.
 
 
 ## Arquitetura
