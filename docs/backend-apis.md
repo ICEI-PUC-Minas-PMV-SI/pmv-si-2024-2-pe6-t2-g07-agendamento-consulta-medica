@@ -43,9 +43,16 @@ A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler,
 
 ## Modelagem da Aplicação
 
+A modelagem da aplicação segue o padrão de API REST, onde cada recurso corresponde a uma entidade do sistema. Os principais entidades incluem:
+- Usuário: Representado por pacientes, médicos e administradores.
+- Consulta: Representa os dados de uma consulta médica, incluindo data, hora, paciente e médico.
+- Notificações: Gera lembretes das consultas para os usuários.
+
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/917c8931d1f68186f0523f1cc757ed43445691b3/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Fluxo de Dados
+
+O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o diagrama a seguir:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/b15a97c1e89df3e87abdf12df77ebbcbdb08dc1d/docs/img/Diagrama%20de%20fluxo%20de%20dados%20-%20Consulta%20F%C3%A1cil.png)
 
