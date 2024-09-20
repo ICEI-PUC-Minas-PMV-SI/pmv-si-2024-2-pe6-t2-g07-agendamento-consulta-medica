@@ -41,20 +41,13 @@ A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler,
 - SQL Server (Banco de Dados):
     - Armazena os dados das consultas agendadas e canceladas.
 
-
-
-
-
-
-![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/830305ee8f5c5be317d29d6fb642085ecd8659fc/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
-
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
 
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/b15a97c1e89df3e87abdf12df77ebbcbdb08dc1d/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Fluxo de Dados
 
-[Diagrama ou descrição do fluxo de dados na aplicação.]
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/b15a97c1e89df3e87abdf12df77ebbcbdb08dc1d/docs/img/Diagrama%20de%20fluxo%20de%20dados%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Requisitos Funcionais
 
