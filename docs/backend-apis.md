@@ -17,7 +17,7 @@ A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler,
 ## Arquitetura
 
 - GestaoAgendamentos.Web (Interface Web):
-    -Responsável por fornecer a interface do usuário.
+-     Responsável por fornecer a interface do usuário.
     -Consome a API Gateway para realizar operações CRUD de agendamentos, histórico de consultas e receber notificações.
   
 - GestaoAgendamentos.API (API Gateway):
