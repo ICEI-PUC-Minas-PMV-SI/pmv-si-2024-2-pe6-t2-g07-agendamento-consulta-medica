@@ -43,7 +43,7 @@ A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler,
 
 ## Modelagem da Aplicação
 
-![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/b15a97c1e89df3e87abdf12df77ebbcbdb08dc1d/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/917c8931d1f68186f0523f1cc757ed43445691b3/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Fluxo de Dados
 
