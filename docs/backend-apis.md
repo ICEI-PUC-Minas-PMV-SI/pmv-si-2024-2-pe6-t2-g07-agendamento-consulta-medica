@@ -54,7 +54,7 @@ A modelagem da aplicação segue o padrão de API REST, onde cada recurso corres
 
 O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o diagrama a seguir:
 
-![arq]()
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/763279f5990374584b32c9d5c1b20200afbf066e/docs/img/Diagrama%20de%20fluxo%20de%20dados%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Requisitos Funcionais
 
