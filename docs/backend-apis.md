@@ -48,7 +48,7 @@ A modelagem da aplicação segue o padrão de API REST, onde cada recurso corres
 - Consulta: Representa os dados de uma consulta médica, incluindo data, hora, paciente e médico.
 - Notificações: Gera lembretes das consultas para os usuários.
 
-![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/49e0e259a7badd57217b0b5c461c0a6d26f58ee2/docs/img/Diagrama%20de%20Classe)
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/903e3c5c48d5e685d2205238ee3a19f2e0286d84/docs/img/Diagrama%20de%20Classe%20-%20Consulta%20F%C3%A1cil.png)
 
 ## Fluxo de Dados
 
