@@ -5,41 +5,13 @@ Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mo
 
 ## Objetivos da API
 
-Os objetivos da API proposta envolve sua utilização apenas por aplicações internas.
-
-1. Facilitar a Integração: Proporcionar uma comunicação eficiente e consistente entre a aplicação web e mobile do sistema de agendamento.
-A API deve disponibilizar endpoints claros para operações de CRUD (Criar, Ler, Atualizar, Excluir), abrangendo recursos como usuários, agendamentos e notificações. A consistência nas respostas e nos formatos de dados será essencial para garantir a integração suave entre os sistemas.
-2. Implementar um sistema de autenticação robusto, como o OAuth 2.0, além de criptografar dados sensíveis de forma a garantir a segurança, assegurando a proteção dos dados dos usuários e a integridade das operações realizadas através da API.
-3. Fornecer Dados em Tempo Real, garantindo que os usuários recebam atualizações instantâneas sobre consultas e horários disponíveis.
-4. Escalabilidade e Desempenho: Garantir que a API seja capaz de lidar com um grande volume de requisições simultâneas (agendamento e verificar as consultas agendadas), mantendo um desempenho estável, conforme número de profissionais e centros de saúde utilizem a ferramenta.
+O objetivo da API é fornecer às aplicações web e móvel o acesso ao cadastro de usuários, autenticação de usuário, realizar agendamento, notificação de agendamento e consulta ao histórico de agendamentos. A API não será disponibilizada para consulta externa.
 
 
 ## Arquitetura
 
-- GestaoAgendamentos.Web (Interface Web):
-  - Responsável por fornecer a interface do usuário.
-  - Consome a API Gateway para realizar operações CRUD de agendamentos, histórico de consultas e receber notificações.
-  
-- GestaoAgendamentos.API (API Gateway):
-  - Ponto de entrada único para todas as requisições da interface web.
-  - Roteia as requisições para o microsserviço apropriado.
-  - Implementa autenticação e autorização.
-  
-- GestaoAgendamentos.Produto (Microsserviço):
-    - Gerencia as operações relacionadas as consultas (CRUD).
-    - Interage com o banco de dados para persistir os dados.
-    - Publica eventos no RabbitMQ após operações de atualização no banco de dados.
-  
-- GestaoAgendamentos.Relatorios (Microsserviço):
-    - Responsável por gerar e disponibilizar relatórios de consultas agendadas.
-    - Consome mensagens do RabbitMQ para atualizar os relatórios em background.
-  
-- RabbitMQ (Message Broker):
-    - Sistema de mensageria para comunicação assíncrona entre os microsserviços.
-    - Utilizado para propagar as atualizações de agendamentos do microsserviço "Produto" para o "Relatórios".
-  
-- SQL Server (Banco de Dados):
-    - Armazena os dados das consultas agendadas e canceladas.
+A API visa fornecer informações sobre os agendamentos tendo como ponto principal consultar os agendamentos realizados pelos usuários. As aplicações web e aplicações móveis farão as solicitações para uma API usando protocolo HTTPS. A arquitetura é monolítica, consistindo em uma única aplicação que organiza suas funcionalidades em camadas, onde a interface do usuário e a lógica de acesso a dados estão integradas em um único programa. A estrutura escolhida foi a modular, o que não apenas facilita a organização do código, mas também possibilita a escalabilidade futura, caso seja necessário expandir suas funcionalidades. O sistema de gerenciamento de banco de dados relacional escolhido foi o PostgreSQL que é conhecido por sua robustez, flexibilidade e conformidade com padrões SQL. A autenticação escolhida foi a JWT (JSON Web Token) Bearer, que é um método de autenticação que utiliza tokens JSON para permitir que usuários ou sistemas se identifiquem de maneira segura.
+
 
 ## Modelagem da Aplicação
 
