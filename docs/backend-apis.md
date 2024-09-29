@@ -74,6 +74,11 @@ Esta rota mostra a busca de um usuário específico (getByld) no sistema:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/66afc0a4a23b7c7364764c0896e2d5d4ae393926/docs/img/Buscar%20usu%C3%A1rios%20espec%C3%ADfico%20login%20administrador.PNG)
 
+- Editar usuário
+
+Esta rota mostra a edição de usuário pelo administrador:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/e89b6fa1e9775e508423febe64c16c004fcec773/docs/img/Editar%20usu%C3%A1rio%20login%20administrador.PNG)
 
 
 ### Endpoint 1
