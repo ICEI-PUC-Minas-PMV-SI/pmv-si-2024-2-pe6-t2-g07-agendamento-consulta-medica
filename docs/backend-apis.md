@@ -80,6 +80,11 @@ Esta rota mostra a edição de usuário pelo administrador:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/e89b6fa1e9775e508423febe64c16c004fcec773/docs/img/Editar%20usu%C3%A1rio%20login%20administrador.PNG)
 
+- Excluir usuário
+
+Esta rota mostra a exclusão de usuário pelo administrador:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/d63119dcca9b5e0bde92753df89cb0ed1c65b177/docs/img/Exclus%C3%A3o%20usu%C3%A1rio%20login%20administrador.PNG)
 
 ### Endpoint 1
 - Método: GET
