@@ -31,24 +31,28 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 ## Requisitos Funcionais
 
 1. A aplicação deve permitir aos usuários administradores se cadastrarem, editarem ou excluírem seu usuário, realizarem log-in no sistema.
-2.  Os usuários médicos devem conseguir criar e deletar consultas.
+2. Os usuários médicos devem conseguir criar e deletar consultas.
 3. Os usuários pacientes devem conseguir agendar e cancelar o agendamento de uma consulta.
 4. A API deve autenticar os usuários antes de permitir o uso do sistema.
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
+1. O sistema deve usar JWT para autenticação e autorização.
+2. As respostas das APIs devem ter um tempo de resposta inferior a 2 segundos.
+3. O sistema deve estar disponível 99% do tempo.
+4. O sistema deve suportar o aumento de usuários e agendamentos sem perda de desempenho.
+5. As APIs devem ser compatíveis com aplicações web e mobile.
 
 ## Tecnologias Utilizadas
 
 - C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
-- Visual Studio: IDE utlizada junto ao ASP .NET Core;
+- Visual Studio: IDE utilizada junto ao ASP .NET Core;
 Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
-- Postman: Utilizado para testes de requisição para a API.
-- GitHub: Plataforma utilizada para versionamento de versões.
-- Banco de Dados Postgres
-- JsonWebToken
-- Swagger
+- Postman: Utilizado para testes de requisição para a API;
+- GitHub: Plataforma utilizada para versionamento;
+- Banco de Dados PostgreSQL: Armazenamento de dados;
+- JsonWebToken: Autenticação de usuários com acesso;
+- Swagger: Desenvolvimento da API.
 
 ## API Endpoints
 
@@ -130,20 +134,47 @@ Esta rota visa buscar as consultas agendadas pelo usuário:
 
 A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação distribuída traz diversas considerações de segurança que são cruciais para proteger os dados e a integridade do sistema. Aqui estão os principais aspectos a serem considerados:
 
-- Autenticação Segura: utilização de HTTPS para a proteger a transmissão do token JWT, evitando que ele seja interceptado por atacantes durante a comunicação entre cliente e servidor; ter como requisito a utilização de senhas fortes por parte dos usuários para proteger a geração do token.
+- Autenticação Segura: utilização de HTTPS para a proteger a transmissão do token JWT, evitando que ele seja interceptado por outros durante a comunicação entre cliente e servidor; ter como requisito a utilização de senhas fortes por parte dos usuários para proteger a geração do token.
 - Autorização: verificação de usuários com suas permissões para disponibilizar os recursos específicos.
 - Prevenção de SQL Injection ao realizar comunicação com o banco de dados somente no backend
 
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+1. Pré-requisitos
+Ferramentas necessárias:
+    - Docker e Docker Compose.
+    - Node.js (v14 ou superior).
+    - PostgreSQL (utilizado como banco de dados).
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+2. Configuração de Variáveis de Ambiente
+Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
+    - PORT: Porta de execução do backend (ex: 3000).
+    - DB_HOST: localhost ou nome do container Docker.
+    - DB_USER: Usuário do PostgreSQL (ex: postgres).
+    - DB_PASS: Senha do PostgreSQL.
+    - DB_NAME: Nome do banco de dados (ex: agendamento_db).
+
+3. Configuração e Execução do Banco de Dados
+Configure e execute o PostgreSQL usando Docker:
+    - docker run --name banco_agendamento -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=senha -e POSTGRES_DB=agendamento_db -p 5432:5432 -d postgres
+
+4. Execução do Backend
+No diretório do backend:
+    - npm install
+    - npm run dev
+
+5. Execução do Frontend
+No diretório do frontend:
+    - npm install
+    - npm start
+
+6. Execução Completa usando Docker Compose
+No diretório raiz do projeto, utilize:
+    - docker-compose up --build
+
+7. Verificação
+Acesse o sistema na URL http://localhost:3000 para garantir que o sistema foi implantado corretamente com o banco PostgreSQL.
 
 ## Testes
 
@@ -156,5 +187,10 @@ A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação 
 5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
 
 # Referências
+
+Documentação do Swagger
+https://swagger.io/docs/
+
+Microfundamento: Apis e Web Services - Canvas, PUC Minas Virtual 2024
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
