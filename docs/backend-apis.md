@@ -46,6 +46,9 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
 - Postman: Utilizado para testes de requisição para a API.
 - GitHub: Plataforma utilizada para versionamento de versões.
+- Banco de Dados Postgres
+- JsonWebToken
+- Swagger
 
 ## API Endpoints
 
