@@ -43,7 +43,7 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 
 ## Tecnologias Utilizadas
 
-- C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
+- C#/ASP.NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
 <<<<<<< HEAD
 - Visual Studio: IDE utilizada junto ao ASP .NET Core;
 Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
@@ -183,13 +183,49 @@ Acesse o sistema na URL http://localhost:3000 para garantir que o sistema foi im
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+1. Rotinas de usuário Administrador
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+### Criar usuário
+![Criar usuário](./img/Criar%20usuário%20login%20administrador.PNG)
+
+### Editar usuário
+![Editar usuário](./img/Editar%20usuário%20login%20administrador.PNG)
+
+### Exclusão usuário
+![Exclusão usuário](./img/Exclusão%20usuário%20login%20administrador.PNG)
+
+### Tentativa de exclusão de usuário sem autorização
+![Tentativa exclusão](./img/Fazer%20uma%20operação%20de%20exclusão%20de%20usuário%20sem%20estar%20autorizado.PNG)
+
+### Autenticação do token de Administrador
+![Auth Admin Token](./img/Autenticar%20administrador%20token.PNG)
+
+### Busca usuário específico
+![Busca usuário](./img/Buscar%20usuários%20específico%20login%20administrador.PNG)
+
+### Busca usuários - geral
+![Busca geral](./img/Buscar%20usuários%20login%20administrador.PNG)
+
+2. Buscas
+
+###  Consultas por médico
+![Busca consultas médico](./img/Buscar%20consultas%20login%20medico%20Aline%20-%20consulta%20disponível.PNG)
+
+### Consultas - geral
+![View Postgres](./img/Visualização%20dos%20dados%20no%20Postgre%20-%20Buscar%20todas%20as%20consultas.PNG)
+
+### Consultas por paciente
+![Busca consultas paciente](./img/Buscar%20consultas%20login%20paciente%20Ana.PNG)
+
+### Busca de usuários
+![Busca usuários](./img/Visualização%20dos%20dados%20no%20Postgre%20-%20Buscar%20todos%20os%20usuários.PNG)
+
+3. Criação de consultas
+![Criação de consultas](./img/Criar%20consulta%20login%20médico%20Aline.PNG)
+
+Os testes realizados na API desenvolvida para o agendamento de consultas demonstraram que ela atende plenamente aos requisitos funcionais e não funcionais propostos. A API permite que os usuários agendem consultas de forma eficiente, com confirmação imediata e notificações automáticas. Além disso, gerencia corretamente os horários disponíveis, evitando conflitos e sobreposições, e oferece funcionalidades de atualização e cancelamento de consultas, garantindo que os usuários possam modificar ou cancelar suas consultas conforme necessário.
+
+Em termos de requisitos não funcionais, a API demonstrou alta performance, respondendo às solicitações em tempo hábil, mesmo sob carga elevada. Testes de segurança confirmaram a proteção dos dados dos usuários contra acessos não autorizados, e a escalabilidade da API foi comprovada, suportando um aumento no número de usuários e consultas sem perda de desempenho. Esses resultados indicam que a API está pronta para ser utilizada em um ambiente de produção, proporcionando uma experiência confiável e eficiente para os usuários.
 
 # Referências
 
