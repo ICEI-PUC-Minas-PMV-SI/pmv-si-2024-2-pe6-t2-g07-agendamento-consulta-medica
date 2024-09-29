@@ -206,4 +206,3 @@ Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvo
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/middleware/?view=aspnetcore-6.0">Middleware do ASP.NET Core</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/web-api/?view=aspnetcore-6.0">Criar APIs Web com o ASP.NET Core</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-6.0">ASP.NET Core documentação da API Web com o Swagger/Open API</a></li>
->>>>>>> e6da8df (Update Referencias)
