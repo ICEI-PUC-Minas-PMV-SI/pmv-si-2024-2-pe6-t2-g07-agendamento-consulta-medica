@@ -122,7 +122,12 @@ Esta rota visa buscar as consultas agendadas pelo usuário:
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação distribuída traz diversas considerações de segurança que são cruciais para proteger os dados e a integridade do sistema. Aqui estão os principais aspectos a serem considerados:
+
+- Autenticação Segura: utilização de HTTPS para a proteger a transmissão do token JWT, evitando que ele seja interceptado por atacantes durante a comunicação entre cliente e servidor; ter como requisito a utilização de senhas fortes por parte dos usuários para proteger a geração do token.
+- Autorização: verificação de usuários com suas permissões para disponibilizar os recursos específicos.
+- Prevenção de SQL Injection ao realizar comunicação com o banco de dados somente no backend
+
 
 ## Implantação
 
