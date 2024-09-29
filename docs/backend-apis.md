@@ -52,9 +52,15 @@ A figura abaixo mostra o localhost na ferramenta SWAGGER:
 
 - Cadastro de usuários
 
-Esta rota demonstra a criaçao de um usuário após a inserção de um nome, CPF, E-mail, senha, telefone, data de nascimento, sexo e perfil :
+Esta rota demonstra a criação de um usuário após a inserção de um nome, CPF, E-mail, senha, telefone, data de nascimento, sexo e perfil :
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/85c0270fa59a4a344490fbf65757de238060b5fd/docs/img/Criar%20usu%C3%A1rio%20login%20administrador.PNG)
+
+- Autenticação de administrador
+
+Esta rota mostra a autenticação de administrador com a inserção de usuário e senha:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/07a6c7da4401ef566d711cb8d28193a0bf4116df/docs/img/Autenticar%20administrador%20token.PNG)
 
 - Buscar todos os usuários
 
