@@ -155,9 +155,14 @@ O catálogo de serviços tem como objetivo organizar, esclarecer e listar as fun
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
+- Visual Studio: IDE utlizada junto ao ASP .NET Core;
+Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
+- Postman: Utilizado para testes de requisição para a API.
+- GitHub: Plataforma utilizada para versionamento de versões.
+- Banco de Dados Postgres
+- JsonWebToken
+- Swagger
 
 ## Hospedagem
 
