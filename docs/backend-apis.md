@@ -46,7 +46,12 @@ Entity Framework: Framework utilizado durante o desenvolvimento da aplicação p
 
 ## API Endpoints
 
-[Liste os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.]
+Para mostrar os principais endpoints da API foi utilizada a ferramenta Swagger, conforme figura abaixo:
+
+![arq](./img/swagger.png)
+
+- Cadastro de usuários
+
 
 ### Endpoint 1
 - Método: GET
