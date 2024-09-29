@@ -146,7 +146,7 @@ A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação 
 
 ## Implantação
 
-1. Pré-requisitos
+1. Pré-requisitos  
 Ferramentas necessárias:
     - Docker e Docker Compose.
     - Node.js (v14 ou superior).
