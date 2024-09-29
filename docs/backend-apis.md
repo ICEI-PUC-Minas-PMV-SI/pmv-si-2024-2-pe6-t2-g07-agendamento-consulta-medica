@@ -30,7 +30,10 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+1 - A aplicação deve permitir aos usuários administradores se cadastrarem, editarem ou excluírem seu usuário, realizarem log-in no sistema.
+2 - Os usuários médicos devem conseguir criar e deletar consultas.
+3 - Os usuários pacientes devem conseguir agendar e cancelar o agendamento de uma consulta.
+4 - A API deve autenticar os usuários antes de permitir o uso do sistema.
 
 ## Requisitos Não Funcionais
 
