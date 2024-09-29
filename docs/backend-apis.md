@@ -2,20 +2,18 @@
 
 Para o desenvolvimento do sistema de agendamento de consultas médicas (web e mobile) foi criada a API que será apresentada nos próximos tópicos, juntamente com a arquitetura que são cruciais para garantir eficiência, escalabilidade e segurança da solução a ser desenvolvida.
 
-
 ## Objetivos da API
 
 O objetivo da API é fornecer às aplicações web e móvel o acesso ao cadastro de usuários, autenticação de usuário, realizar agendamento, notificação de agendamento e consulta ao histórico de agendamentos. A API não será disponibilizada para consulta externa.
-
 
 ## Arquitetura
 
 A API visa fornecer informações sobre os agendamentos tendo como ponto principal consultar os agendamentos realizados pelos usuários. As aplicações web e aplicações móveis farão as solicitações para uma API usando protocolo HTTPS. A arquitetura é monolítica, consistindo em uma única aplicação que organiza suas funcionalidades em camadas, onde a interface do usuário e a lógica de acesso a dados estão integradas em um único programa. A estrutura escolhida foi a modular, o que não apenas facilita a organização do código, mas também possibilita a escalabilidade futura, caso seja necessário expandir suas funcionalidades. O sistema de gerenciamento de banco de dados relacional escolhido foi o PostgreSQL que é conhecido por sua robustez, flexibilidade e conformidade com padrões SQL. A autenticação escolhida foi a JWT (JSON Web Token) Bearer, que é um método de autenticação que utiliza tokens JSON para permitir que usuários ou sistemas se identifiquem de maneira segura.
 
-
 ## Modelagem da Aplicação
 
 A modelagem da aplicação segue o padrão de API REST, onde cada recurso corresponde a uma entidade do sistema. Os principais entidades incluem:
+
 - Usuário: Representado por pacientes, médicos e administradores.
 - Consulta: Representa os dados de uma consulta médica, incluindo data, hora, paciente e médico.
 - Notificações: Gera lembretes das consultas para os usuários.
@@ -46,6 +44,7 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 ## Tecnologias Utilizadas
 
 - C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
+<<<<<<< HEAD
 - Visual Studio: IDE utilizada junto ao ASP .NET Core;
 Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
 - Postman: Utilizado para testes de requisição para a API;
@@ -53,6 +52,15 @@ Entity Framework: Framework utilizado durante o desenvolvimento da aplicação p
 - Banco de Dados PostgreSQL: Armazenamento de dados;
 - JsonWebToken: Autenticação de usuários com acesso;
 - Swagger: Desenvolvimento da API.
+=======
+- Visual Studio: IDE utlizada junto ao ASP .NET Core;
+  Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
+- Postman: Utilizado para testes de requisição para a API.
+- GitHub: Plataforma utilizada para versionamento de versões.
+- Banco de Dados Postgres
+- JsonWebToken
+- Swagger
+>>>>>>> e6da8df (Update Referencias)
 
 ## API Endpoints
 
@@ -81,7 +89,6 @@ Esta rota mostra a busca de todos os usuários (getAll) por meio do login de adm
 Abaixo a visualização dos dados de todos os usuários no PostgreSQL:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/7584b290b9bbaf40e41ca5e8460e51d25310c3bf/docs/img/Visualiza%C3%A7%C3%A3o%20dos%20dados%20no%20Postgre%20-%20Buscar%20todos%20os%20usu%C3%A1rios.PNG)
-
 
 - Buscar usuários específicos
 
@@ -129,7 +136,6 @@ Esta rota visa buscar as consultas agendadas pelo usuário:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/7584b290b9bbaf40e41ca5e8460e51d25310c3bf/docs/img/Visualiza%C3%A7%C3%A3o%20dos%20dados%20no%20Postgre%20-%20Buscar%20todas%20as%20consultas.PNG)
 
-
 ## Considerações de Segurança
 
 A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação distribuída traz diversas considerações de segurança que são cruciais para proteger os dados e a integridade do sistema. Aqui estão os principais aspectos a serem considerados:
@@ -137,7 +143,6 @@ A utilização da autenticação JWT (JSON Web Token) Bearer em uma aplicação 
 - Autenticação Segura: utilização de HTTPS para a proteger a transmissão do token JWT, evitando que ele seja interceptado por outros durante a comunicação entre cliente e servidor; ter como requisito a utilização de senhas fortes por parte dos usuários para proteger a geração do token.
 - Autorização: verificação de usuários com suas permissões para disponibilizar os recursos específicos.
 - Prevenção de SQL Injection ao realizar comunicação com o banco de dados somente no backend
-
 
 ## Implantação
 
@@ -188,9 +193,17 @@ Acesse o sistema na URL http://localhost:3000 para garantir que o sistema foi im
 
 # Referências
 
+<<<<<<< HEAD
 Documentação do Swagger
 https://swagger.io/docs/
 
 Microfundamento: Apis e Web Services - Canvas, PUC Minas Virtual 2024
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+=======
+<li><a href="https://docs.microsoft.com/pt-br/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0">Visão Geral do ASP.NET Core</a></li>
+<li><a href="https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0">Injeção de dependência no ASP.NET CORE</a></li>
+<li><a href="https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/middleware/?view=aspnetcore-6.0">Middleware do ASP.NET Core</a></li>
+<li><a href="https://docs.microsoft.com/pt-br/aspnet/core/web-api/?view=aspnetcore-6.0">Criar APIs Web com o ASP.NET Core</a></li>
+<li><a href="https://docs.microsoft.com/pt-br/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-6.0">ASP.NET Core documentação da API Web com o Swagger/Open API</a></li>
+>>>>>>> e6da8df (Update Referencias)
