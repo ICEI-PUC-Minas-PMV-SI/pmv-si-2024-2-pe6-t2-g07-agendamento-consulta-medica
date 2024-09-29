@@ -90,7 +90,17 @@ Esta rota mostra a exclusão de usuário pelo administrador:
 
 Esta rota mostra a tentativa de deletar um usuário sem ter essa permissão:
 
-![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/df4e71db6c06f4e65090eca85a0c09514aebcdee/docs/img/Fazer%20uma%20opera%C3%A7%C3%A3o%20de%20exclus%C3%A3o%20de%20usu%C3%A1rio%20sem%20estar%20autorizado.PNG)
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/df4e71db6c06f4e65090eca85a0c09514aebcdee/docs/img/Fazer%20uma%20opera%C3%A7%C3%A3o%20de%20exclus%C3%A3o%20de%20usu%C3%A1rio%20sem%20estar%20autorizado.PNG
+
+- Criar consulta - login médico
+
+Esta rota mostra a criação de uma consulta pelo médico com a inserção da data e hora da consulta:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/33eb92ab172cb3e80b55bdf8df22c6b7d8b080d6/docs/img/Criar%20consulta%20login%20m%C3%A9dico%20Aline.PNG)
+
+
+
+
 
 ### Endpoint 1
 - Método: GET
