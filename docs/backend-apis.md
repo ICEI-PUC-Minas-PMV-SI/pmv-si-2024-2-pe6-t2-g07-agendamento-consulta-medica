@@ -56,6 +56,14 @@ Esta rota demonstra a criaçao de um usuário após a inserção de um nome, CPF
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/85c0270fa59a4a344490fbf65757de238060b5fd/docs/img/Criar%20usu%C3%A1rio%20login%20administrador.PNG)
 
+- Buscar todos os usuários
+
+Esta rota mostra a busca de todos os usuários (getAll) por meio do login de administrador:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/8277f278a18bef0d52aef511d1a9b559b4155ee9/docs/img/Buscar%20usu%C3%A1rios%20login%20administrador.PNG)
+
+
+
 
 
 ### Endpoint 1
