@@ -152,7 +152,7 @@ Ferramentas necessárias:
     - Node.js (v14 ou superior).
     - PostgreSQL (utilizado como banco de dados).
 
-2. Configuração de Variáveis de Ambiente
+2. Configuração de Variáveis de Ambiente  
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
     - PORT: Porta de execução do backend (ex: 3000).
     - DB_HOST: localhost ou nome do container Docker.
@@ -160,25 +160,25 @@ Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
     - DB_PASS: Senha do PostgreSQL.
     - DB_NAME: Nome do banco de dados (ex: agendamento_db).
 
-3. Configuração e Execução do Banco de Dados
+3. Configuração e Execução do Banco de Dados  
 Configure e execute o PostgreSQL usando Docker:
     - docker run --name banco_agendamento -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=senha -e POSTGRES_DB=agendamento_db -p 5432:5432 -d postgres
 
-4. Execução do Backend
+4. Execução do Backend  
 No diretório do backend:
     - npm install
     - npm run dev
 
-5. Execução do Frontend
+5. Execução do Frontend  
 No diretório do frontend:
     - npm install
     - npm start
 
-6. Execução Completa usando Docker Compose
+6. Execução Completa usando Docker Compose  
 No diretório raiz do projeto, utilize:
     - docker-compose up --build
 
-7. Verificação
+7. Verificação  
 Acesse o sistema na URL http://localhost:3000 para garantir que o sistema foi implantado corretamente com o banco PostgreSQL.
 
 ## Testes
