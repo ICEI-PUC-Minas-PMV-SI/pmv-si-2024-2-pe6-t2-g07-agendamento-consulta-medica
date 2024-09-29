@@ -62,7 +62,11 @@ Esta rota mostra a busca de todos os usuários (getAll) por meio do login de adm
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/8277f278a18bef0d52aef511d1a9b559b4155ee9/docs/img/Buscar%20usu%C3%A1rios%20login%20administrador.PNG)
 
+- Buscar usuários específicos
 
+Esta rota mostra a busca de um usuário específico (getByld) no sistema:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/66afc0a4a23b7c7364764c0896e2d5d4ae393926/docs/img/Buscar%20usu%C3%A1rios%20espec%C3%ADfico%20login%20administrador.PNG)
 
 
 
