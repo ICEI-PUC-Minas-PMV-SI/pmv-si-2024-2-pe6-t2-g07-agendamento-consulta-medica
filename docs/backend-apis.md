@@ -44,7 +44,6 @@ O fluxo de dados na aplicação segue o padrão cliente-servidor, conforme o dia
 ## Tecnologias Utilizadas
 
 - C#/ASP.NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
-<<<<<<< HEAD
 - Visual Studio: IDE utilizada junto ao ASP .NET Core;
 Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
 - Postman: Utilizado para testes de requisição para a API;
@@ -52,15 +51,6 @@ Entity Framework: Framework utilizado durante o desenvolvimento da aplicação p
 - Banco de Dados PostgreSQL: Armazenamento de dados;
 - JsonWebToken: Autenticação de usuários com acesso;
 - Swagger: Desenvolvimento da API.
-=======
-- Visual Studio: IDE utlizada junto ao ASP .NET Core;
-  Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
-- Postman: Utilizado para testes de requisição para a API.
-- GitHub: Plataforma utilizada para versionamento de versões.
-- Banco de Dados Postgres
-- JsonWebToken
-- Swagger
->>>>>>> e6da8df (Update Referencias)
 
 ## API Endpoints
 
@@ -185,39 +175,39 @@ Acesse o sistema na URL http://localhost:3000 para garantir que o sistema foi im
 
 1. Rotinas de usuário Administrador
 
-### Criar usuário
+- Criar usuário
 ![Criar usuário](./img/Criar%20usuário%20login%20administrador.PNG)
 
-### Editar usuário
+- Editar usuário
 ![Editar usuário](./img/Editar%20usuário%20login%20administrador.PNG)
 
-### Exclusão usuário
+- Exclusão usuário
 ![Exclusão usuário](./img/Exclusão%20usuário%20login%20administrador.PNG)
 
-### Tentativa de exclusão de usuário sem autorização
+- Tentativa de exclusão de usuário sem autorização
 ![Tentativa exclusão](./img/Fazer%20uma%20operação%20de%20exclusão%20de%20usuário%20sem%20estar%20autorizado.PNG)
 
-### Autenticação do token de Administrador
+- Autenticação do token de Administrador
 ![Auth Admin Token](./img/Autenticar%20administrador%20token.PNG)
 
-### Busca usuário específico
+- Busca usuário específico
 ![Busca usuário](./img/Buscar%20usuários%20específico%20login%20administrador.PNG)
 
-### Busca usuários - geral
+- Busca usuários - geral
 ![Busca geral](./img/Buscar%20usuários%20login%20administrador.PNG)
 
 2. Buscas
 
-###  Consultas por médico
+- Consultas por médico
 ![Busca consultas médico](./img/Buscar%20consultas%20login%20medico%20Aline%20-%20consulta%20disponível.PNG)
 
-### Consultas - geral
+- Consultas - geral
 ![View Postgres](./img/Visualização%20dos%20dados%20no%20Postgre%20-%20Buscar%20todas%20as%20consultas.PNG)
 
-### Consultas por paciente
+- Consultas por paciente
 ![Busca consultas paciente](./img/Buscar%20consultas%20login%20paciente%20Ana.PNG)
 
-### Busca de usuários
+- Busca de usuários
 ![Busca usuários](./img/Visualização%20dos%20dados%20no%20Postgre%20-%20Buscar%20todos%20os%20usuários.PNG)
 
 3. Criação de consultas
@@ -229,16 +219,10 @@ Em termos de requisitos não funcionais, a API demonstrou alta performance, resp
 
 # Referências
 
-<<<<<<< HEAD
-Documentação do Swagger
-https://swagger.io/docs/
-
-Microfundamento: Apis e Web Services - Canvas, PUC Minas Virtual 2024
-
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
-=======
+<li><a href="https://pucminas.instructure.com/courses/155663">Microfundamento: Apis e Web Services - Canvas, PUC Minas Virtual 2024</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0">Visão Geral do ASP.NET Core</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-6.0">Injeção de dependência no ASP.NET CORE</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/middleware/?view=aspnetcore-6.0">Middleware do ASP.NET Core</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/web-api/?view=aspnetcore-6.0">Criar APIs Web com o ASP.NET Core</a></li>
 <li><a href="https://docs.microsoft.com/pt-br/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-6.0">ASP.NET Core documentação da API Web com o Swagger/Open API</a></li>
+<li><a href="https://swagger.io/docs/">Documentação Swagger</a></li>
