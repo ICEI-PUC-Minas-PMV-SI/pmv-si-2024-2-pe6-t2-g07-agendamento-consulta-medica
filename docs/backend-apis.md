@@ -68,6 +68,11 @@ Esta rota mostra a busca de todos os usuários (getAll) por meio do login de adm
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/8277f278a18bef0d52aef511d1a9b559b4155ee9/docs/img/Buscar%20usu%C3%A1rios%20login%20administrador.PNG)
 
+Abaixo a visualização dos dados de todos os usuários no PostgreSQL:
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/7584b290b9bbaf40e41ca5e8460e51d25310c3bf/docs/img/Visualiza%C3%A7%C3%A3o%20dos%20dados%20no%20Postgre%20-%20Buscar%20todos%20os%20usu%C3%A1rios.PNG)
+
+
 - Buscar usuários específicos
 
 Esta rota mostra a busca de um usuário específico (getByld) no sistema:
@@ -109,6 +114,10 @@ Esta rota mostra um médico logado verificando se há consulta disponível:
 Esta rota visa buscar as consultas agendadas pelo usuário:
 
 ![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/a1061e978835e994ee9a5a0cbdf06b42c56638a7/docs/img/Buscar%20consultas%20login%20paciente%20Ana.PNG)
+
+- Visualização de dados no PostfreSQL - Buscar todas as consultas
+
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/7584b290b9bbaf40e41ca5e8460e51d25310c3bf/docs/img/Visualiza%C3%A7%C3%A3o%20dos%20dados%20no%20Postgre%20-%20Buscar%20todas%20as%20consultas.PNG)
 
 
 ## Considerações de Segurança
