@@ -48,7 +48,7 @@ Entity Framework: Framework utilizado durante o desenvolvimento da aplicação p
 
 Para mostrar os principais endpoints da API foi utilizada a ferramenta Swagger, conforme figura abaixo:
 
-[docs/img/Swagger.PNG](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/9f22fc97edd9c10d673d55c09decf7d674df7a38/docs/img/Swagger.PNG)
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/9f22fc97edd9c10d673d55c09decf7d674df7a38/docs/img/Swagger.PNG)
 
 - Cadastro de usuários
 
