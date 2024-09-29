@@ -48,7 +48,7 @@ Entity Framework: Framework utilizado durante o desenvolvimento da aplicação p
 
 Para mostrar os principais endpoints da API foi utilizada a ferramenta Swagger, conforme figura abaixo:
 
-![arq](./img/swagger.png)
+
 
 - Cadastro de usuários
 
