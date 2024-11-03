@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Médico - Consulta Fácil</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Daterangepicker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Consulta Fácil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="container mt-4">
+        <h2>Bem-vindo, Dr. Marcos Almeida</h2>
+
+        <!-- Consultas de Hoje -->
+        <div class="card mt-4">
+            <div class="card-header bg-primary text-white">
+                Consultas de Hoje
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Horário</th>
+                            <th scope="col">Especialidade</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="consultasHoje">
+                        <tr id="consulta-hoje-1">
+                            <td>João Silva</td>
+                            <td>14:00</td>
+                            <td>Cardiologia</td>
+                            <td><span class="badge bg-warning" id="status-hoje-1">Aguardando</span></td>
+                        </tr>
+                        <tr id="consulta-hoje-2">
+                            <td>Maria Oliveira</td>
+                            <td>15:30</td>
+                            <td>Cardiologia</td>
+                            <td><span class="badge bg-success" id="status-hoje-2">Atendido</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Agenda -->
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                Sua Agenda
+            </div>
+            <div class="card-body">
+                <!-- Filtro de datas com Daterangepicker -->
+                <div class="mb-3 row">
+                    <div class="col-md-12">
+                        <label for="filtroCalendario" class="form-label">Filtrar por data ou intervalo:</label>
+                        <input type="text" class="form-control" id="filtroCalendario" placeholder="Selecione uma data ou intervalo">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="filtrarAgenda()">Filtrar</button>
+
+                <table class="table table-hover mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="agenda">
+                        <tr data-data="2024-10-25" id="agenda-1">
+                            <td>25/10/2024</td>
+                            <td>14:00</td>
+                            <td>João Silva</td>
+                            <td><span class="badge bg-warning" id="status-1">Aguardando</span></td>
+                            <td>
+                                <button class="btn btn-success" onclick="confirmarConsulta(1)">Confirmar</button>
+                                <button class="btn btn-primary" onclick="atenderConsulta(1)">Atendido</button>
+                                <button class="btn btn-danger" onclick="cancelarConsulta(1)">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr data-data="2024-10-25" id="agenda-2">
+                            <td>25/10/2024</td>
+                            <td>15:30</td>
+                            <td>Maria Oliveira</td>
+                            <td><span class="badge bg-success" id="status-2">Atendido</span></td>
+                            <td>
+                                <button class="btn btn-success" onclick="confirmarConsulta(2)">Confirmar</button>
+                                <button class="btn btn-primary" onclick="atenderConsulta(2)">Atendido</button>
+                                <button class="btn btn-danger" onclick="cancelarConsulta(2)">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr data-data="2024-11-01" id="agenda-3">
+                            <td>01/11/2024</td>
+                            <td>09:00</td>
+                            <td>Pedro Santos</td>
+                            <td><span class="badge bg-warning" id="status-3">Aguardando</span></td>
+                            <td>
+                                <button class="btn btn-success" onclick="confirmarConsulta(3)">Confirmar</button>
+                                <button class="btn btn-primary" onclick="atenderConsulta(3)">Atendido</button>
+                                <button class="btn btn-danger" onclick="cancelarConsulta(3)">Cancelar</button>
+                            </td>
+                        </tr>
+                        <tr data-data="2024-11-02" id="agenda-4">
+                            <td>02/11/2024</td>
+                            <td>10:30</td>
+                            <td>Fernanda Lima</td>
+                            <td><span class="badge bg-warning" id="status-4">Aguardando</span></td>
+                            <td>
+                                <button class="btn btn-success" onclick="confirmarConsulta(4)">Confirmar</button>
+                                <button class="btn btn-primary" onclick="atenderConsulta(4)">Atendido</button>
+                                <button class="btn btn-danger" onclick="cancelarConsulta(4)">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-4">
+        &copy; 2024 Consulta Fácil - Todos os direitos reservados.
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Daterangepicker JS -->
+    <script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="js/medico.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários - Consulta Fácil</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .editable {
+            background-color: #fff3cd;
+        }
+        .editable select, .editable input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Consulta Fácil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="pagina_inicial.html">Página inicial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gerenciar_usuarios.html">Gerenciar Usuários</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Quem somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Gerenciar Usuários Section -->
+    <section class="container mt-4">
+        <h2>Gerenciar Usuários</h2>
+        <div class="mb-3">
+            <button class="btn btn-success" onclick="window.location.href='cadastrar_usuarios.html'">Cadastrar Usuário</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th id="id-header">ID</th> <!-- Adiciona um ID ao cabeçalho ID -->
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Data de Nascimento</th>
+                    <th>Sexo</th>
+                    <th>Perfil</th>
+                    <th>Senha</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="usuarios-table">
+                <!-- Conteúdo será inserido aqui via JavaScript -->
+            </tbody>
+        </table>
+        <p class="error-message" id="error-message"></p>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-4">
+        &copy; 2024 Consulta Fácil - Todos os direitos reservados.
+    </footer>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            const usuariosTable = document.getElementById('usuarios-table');
+            const errorMessage = document.getElementById('error-message');
+            const idHeader = document.getElementById('id-header'); // Adiciona um ID ao cabeçalho ID
+            let sortAsc = true; // Variável para alternar entre ordenação ascendente e descendente
+
+            idHeader.addEventListener('click', function() {
+                sortAsc = !sortAsc;
+                loadUsuarios(sortAsc);
+            });
+
+            // Função para carregar os usuários
+            function loadUsuarios(sortAsc) {
+                fetch('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.items && Array.isArray(data.items)) {
+                        usuariosTable.innerHTML = ''; // Limpa a tabela
+                        data.items.sort((a, b) => sortAsc ? a.id - b.id : b.id - a.id); // Ordena os itens por ID
+                        data.items.forEach(usuario => {
+                            const formattedDate = new Date(usuario.dataNascimento).toLocaleDateString('pt-BR'); // Formata a data
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${usuario.id}</td>
+                                <td contenteditable="true" class="editable">${usuario.nome}</td>
+                                <td contenteditable="true" class="editable">${usuario.cpf}</td>
+                                <td contenteditable="true" class="editable">${usuario.email}</td>
+                                <td contenteditable="true" class="editable">${usuario.telefone}</td>
+                                <td contenteditable="true" class="editable">${formattedDate}</td>
+                                <td class="editable">
+                                    <select>
+                                        <option value="Feminino" ${usuario.sexo === 1 ? 'selected' : ''}>Feminino</option>
+                                        <option value="Masculino" ${usuario.sexo === 2 ? 'selected' : ''}>Masculino</option>
+                                    </select>
+                                </td>
+                                <td class="editable">
+                                    <select>
+                                        <option value="0" ${usuario.perfil === 0 ? 'selected' : ''}>Administrador</option>
+                                        <option value="1" ${usuario.perfil === 1 ? 'selected' : ''}>Médico</option>
+                                        <option value="2" ${usuario.perfil === 2 ? 'selected' : ''}>Paciente</option>
+                                    </select>
+                                </td>
+                                <td contenteditable="true" class="editable">${usuario.senha.slice(0, 8).replace(/./g, '*')}</td>
+                                <td class="action-buttons">
+                                    <button class="btn btn-primary" onclick="updateUsuario(this)">Atualizar</button>
+                                    <button class="btn btn-danger" onclick="deleteUsuario(${usuario.id})">Excluir</button>
+                                </td>
+                            `;
+                            usuariosTable.appendChild(row);
+                        });
+                    } else {
+                        errorMessage.textContent = 'Formato de dados inválido recebido da API.';
+                        errorMessage.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar usuários:', error);
+                    errorMessage.textContent = 'Erro ao carregar usuários. Por favor, tente novamente.';
+                    errorMessage.style.display = 'block';
+                });
+            }
+
+            // Função para atualizar o usuário
+            window.updateUsuario = function(button) {
+                    const row = button.closest('tr');
+                    const id = row.cells[0].textContent;
+
+                    const dateParts = row.cells[5].textContent.split('/');
+                    const dateObject = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}T00:00:00`);
+                    const dataNascimentoISO = dateObject.toISOString();
+
+
+                    const updatedUser = {
+                        id: id,
+                        nome: row.cells[1].textContent,
+                        cpf: row.cells[2].textContent,
+                        email: row.cells[3].textContent,
+                        senha: row.cells[8].textContent.replace(/\*/g, ''),  // Converte a senha anonimizada de volta
+                        telefone: row.cells[4].textContent,
+                        dataNascimento: dataNascimentoISO,  // Ajusta a data para ISO string
+                        sexo: row.cells[6].querySelector('select').value === 'Feminino' ? 1 : 2,
+                        perfil: parseInt(row.cells[7].querySelector('select').value, 10)
+                    };
+
+                    fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios/${id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify(updatedUser)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.text().then(text => { throw new Error(text) });
+                        }
+                        alert('Usuário atualizado com sucesso!');
+                        location.reload();  // Recarrega a página após a atualização
+                    })
+                    .catch(error => {
+                        console.error('Erro ao atualizar usuário:', error);
+                        errorMessage.textContent = 'Erro ao atualizar usuário. Por favor, tente novamente.';
+                        errorMessage.style.display = 'block';
+                    });
+                };
+
+            // Função para excluir o usuário
+            window.deleteUsuario = function(id) {
+                if (confirm('Tem certeza que deseja excluir este usuário?')) {
+                    fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao excluir usuário');
+                        }
+                        loadUsuarios(); // Recarrega a tabela após a exclusão
+                    })
+                    .catch(error => {
+                        console.error('Erro ao excluir usuário:', error);
+                        errorMessage.textContent = 'Erro ao excluir usuário. Por favor, tente novamente.';
+                        errorMessage.style.display = 'block';
+                    });
+                }
+            }
+
+            // Carrega os usuários ao carregar a página
+            loadUsuarios(true);
+        });
+
+    </script>
+</body>
+</html>

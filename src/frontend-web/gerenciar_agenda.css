@@ -1,0 +1,33 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #343a40;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.btn {
+    font-size: 1rem;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}

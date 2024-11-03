@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Consultas Médicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/gerenciar_agenda.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Consulta Fácil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Gerenciar Usuários</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Agenda de Médicos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Verificar Agendas Existentes -->
+<div class="container mt-5">
+    <h2 class="mb-4">Verificar Agenda de Médico Cadastrado</h2>
+    <form id="search-form" class="row g-3">
+        <div class="col-md-4">
+            <label for="search-doctor-name" class="form-label">Nome do Médico</label>
+            <input type="text" class="form-control" id="search-doctor-name" placeholder="Digite o nome do médico">
+        </div>
+        <div class="col-md-4">
+            <label for="search-specialty" class="form-label">Especialidade</label>
+            <input type="text" class="form-control" id="search-specialty" placeholder="Digite a especialidade">
+        </div>
+        <div class="col-md-4">
+            <label for="search-date" class="form-label">Data da Agenda</label>
+            <input type="date" class="form-control" id="search-date">
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary mt-4" id="search-btn">Buscar Agenda</button>
+            <button type="button" class="btn btn-secondary mt-4 ms-2" id="clear-search-btn">Limpar Busca</button>
+        </div>
+    </form>
+
+    <table class="table table-striped mt-4">
+        <!-- Parte da tabela para Verificar Agenda de Médico Cadastrado -->
+        <thead>
+         <tr>
+            <th>Data</th>
+            <th>Médico</th>
+            <th>Especialidade</th>
+            <th>Horário</th>
+            <th>Paciente</th>
+            <th>Status</th>
+            <th>Ações</th> 
+         </tr>
+        </thead>
+        <tbody id="search-results">
+            <!-- Resultados aparecerão aqui -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Configuração da Agenda -->
+<div class="container mt-5">
+    <h2 class="mb-4">Configuração da Agenda de Consultas</h2>
+    <form id="schedule-form" class="row g-3">
+        <div class="col-md-4">
+            <label for="doctor-select" class="form-label">Médico</label>
+            <select class="form-select" id="doctor-select" required>
+                <option value="" selected disabled>Selecione o médico</option>
+                <option value="1" data-specialty="Cardiologia">Dr. João</option>
+                <option value="2" data-specialty="Dermatologia">Dr. Maria</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="doctor-specialty" class="form-label">Especialidade</label>
+            <input type="text" class="form-control" id="doctor-specialty" readonly>
+        </div>
+        <div class="col-md-4">
+            <label for="schedule-date" class="form-label">Data da Agenda</label>
+            <input type="date" class="form-control" id="schedule-date" required>
+        </div>
+        <div class="col-md-4">
+            <label for="start-time" class="form-label">Horário de Início</label>
+            <input type="time" class="form-control" id="start-time" required>
+        </div>
+        <div class="col-md-4">
+            <label for="end-time" class="form-label">Horário de Término</label>
+            <input type="time" class="form-control" id="end-time" required>
+        </div>
+        <div class="col-md-4">
+            <label for="interval-time" class="form-label">Intervalo entre Consultas (min)</label>
+            <input type="number" class="form-control" id="interval-time" required min="5">
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary mt-4">Criar Agenda</button>
+            <button type="button" class="btn btn-secondary mt-4 ms-2" id="clear-form-btn">Limpar Formulário</button>
+        </div>
+    </form>
+</div>
+
+<!-- Lista de Consultas -->
+<div class="container mt-5">
+    <h2 class="mb-4">Agenda de Consultas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Médico</th>
+                <th>Especialidade</th>
+                <th>Horário</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="appointment-list">
+            <!-- A agenda será exibida aqui -->
+        </tbody>
+    </table>
+
+    <!-- Botões para limpar tabela e salvar dados -->
+    <button class="btn btn-danger mt-3" id="clear-table-btn">Limpar Tabela</button>
+    <button class="btn btn-success mt-3 ms-2" id="save-schedule-btn">Salvar Agenda</button>
+</div>
+
+<!-- Footer -->
+<footer class="bg-success text-white text-center py-3 mt-4">
+    &copy; 2024 Consulta Fácil - Todos os direitos reservados.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/gerenciar_agenda.js"></script>
+</body>
+</html>
