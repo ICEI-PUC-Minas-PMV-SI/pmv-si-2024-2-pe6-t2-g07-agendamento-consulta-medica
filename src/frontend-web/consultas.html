@@ -6,12 +6,46 @@
     <title>Gerenciar Consultas - Consulta Fácil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .editable {
+            background-color: #fff3cd;
+        }
+        .editable select, .editable input {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Consulta Fácil</a>
+            <a class="navbar-brand" href="pagina_inicial.html">Consulta Fácil</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="pagina_inicial.html">Página inicial</a></li>
@@ -24,7 +58,9 @@
     <!-- Gerenciar Consultas Section -->
     <section class="container mt-4">
         <h2>Gerenciar Consultas</h2>
-        <button class="btn btn-success mb-3" onclick="showAddModal()">Adicionar Nova Consulta</button>
+        <div class="mb-3">
+            <button class="btn btn-success" onclick="window.location.href='cadastrar_consultas.html'">Cadastrar nova consulta</button>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -45,7 +81,7 @@
     </section>
 
     <!-- Modal para Adicionar/Editar Consulta -->
-    <div class="modal fade" id="consultasModal" tabindex="-1" aria-labelledby="consultasModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="consultasModal" tabindex="-1" aria-labelledby="consultasModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -80,7 +116,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-4">
+        &copy; 2024 Consulta Fácil - Todos os direitos reservados.
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="consultas.js"></script>

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorMessage = document.getElementById('error-message');
     const consultasModal = new bootstrap.Modal(document.getElementById('consultasModal'));
 
-    // Função para carregar as consultas
+    // Funï¿½ï¿½o para carregar as consultas
     function loadConsultas() {
         fetch('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Consultas', {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Função para adicionar ou atualizar consulta
+    // Funï¿½ï¿½o para adicionar ou atualizar consulta
     document.getElementById('consultasForm').addEventListener('submit', function (event) {
         event.preventDefault();
         const id = document.getElementById('consultaId').value;
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    // Função para editar consulta
+    // Funï¿½ï¿½o para editar consulta
     window.editConsulta = function (id) {
         fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Consultas/${id}`, {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     };
 
-    // Função para excluir consulta
+    // Funï¿½ï¿½o para excluir consulta
     window.deleteConsulta = function (id) {
         if (confirm('Tem certeza que deseja excluir esta consulta?')) {
             fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Consultas/${id}`, {
