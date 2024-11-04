@@ -35,18 +35,25 @@ A interface do Consulta Fácil é projetada para ser simples e acessível, inclu
 
 #### Página Inicial
 _Página de Login_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20login.png?raw=true)
 
 _Página dashboard do Paciente_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20paciente.png?raw=true)
 
 _Página dashboard do Médico_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20medico.png?raw=true)
 
 _Página dashboard do Administrador_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20admin.png?raw=true)
 
 _Página de busca/marcação de Consultas_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20consultas.png?raw=true)
 
 _Página de gerenciamento da agenda do Médico_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20agenda%20medico.png?raw=true)
 
 _Página de gerenciamento de Usuários_
+![arq](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g07-agendamento-consulta-medica/blob/main/docs/img/pagina%20gerenciar%20usuarios.png?raw=true)
 
 ### Design Visual
 
