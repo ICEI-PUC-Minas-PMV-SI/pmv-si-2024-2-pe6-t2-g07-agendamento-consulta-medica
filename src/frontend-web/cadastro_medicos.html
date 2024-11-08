@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Médicos - Consulta Fácil</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Consulta Fácil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="pagina_inicial.html">Página inicial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Quem somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="paciente.html">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" id="logout" href="#">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Cadastro Section -->
+    <section class="container mt-4">
+        <h2>Cadastro de Médicos</h2>
+        <form id="medico-form" class="mt-4">
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Nome de Usuário</label>
+                <select class="form-select" id="usuario" required>
+                    <option value="" disabled selected>Selecione o usuário</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="crm" class="form-label">CRM</label>
+                <input type="text" class="form-control" id="crm" placeholder="Digite o CRM" required>
+            </div>
+            <div class="mb-3">
+                <label for="especialidade" class="form-label">Especialidade</label>
+                <select class="form-select" id="especialidade" required>
+                    <option value="" disabled selected>Selecione a especialidade</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Pediatria">Pediatria</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                    <option value="Ginecologia">Ginecologia</option>
+                </select>
+            </div>
+            <p class="error-message" id="error-message"></p>
+            <button type="submit" class="btn btn-success">Cadastrar</button> 
+			<button type="button" id="update-button" class="btn btn-primary ms-2">Atualizar
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-4">
+        &copy; 2024 Consulta Fácil - Todos os direitos reservados.
+    </footer>
+    <!-- Bootstrap 5 JS and Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+			const token = localStorage.getItem('token');
+			const errorMessage = document.getElementById('error-message');
+
+			// Carregar usuários com perfil "Médico"
+			function carregarUsuariosMedicos() {
+				axios.get('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/usuarios', {
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(function(response) {
+					const usuarios = response.data.items;
+					console.log('Usuários:', usuarios); // Verificar usuários recebidos
+					if (Array.isArray(usuarios)) {
+						const selectUsuario = document.getElementById('usuario');
+						usuarios.forEach(usuario => {
+							if (usuario.perfil === 1) { // perfil "Médico"
+								const option = document.createElement('option');
+								option.value = usuario.id;
+								option.text = usuario.nome;
+								selectUsuario.add(option);
+							}
+						});
+					} else {
+						throw new Error('Formato de dados inesperado');
+					}
+				})
+				.catch(function(error) {
+					console.error('Erro ao carregar usuários médicos:', error);
+					errorMessage.textContent = 'Erro ao carregar usuários médicos. Tente novamente mais tarde.';
+					errorMessage.style.display = 'block';
+				});
+			}
+
+			// Obter o próximo ID de médico
+			function obterMaxIdMedico() {
+				return axios.get('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos', {
+					headers: {
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(function(response) {
+					const medicos = response.data.items;
+					console.log('Médicos:', medicos); // Verificar médicos recebidos
+					const maxId = Math.max(...medicos.map(medico => medico.id), 0);
+					return maxId;
+				})
+				.catch(function(error) {
+					console.error('Erro ao obter médicos:', error);
+					errorMessage.textContent = 'Erro ao obter médicos. Tente novamente mais tarde.';
+					errorMessage.style.display = 'block';
+					return 0;
+				});
+			}
+
+			carregarUsuariosMedicos();
+
+			document.getElementById('medico-form').addEventListener('submit', async function(event) {
+				event.preventDefault();
+
+				const usuarioId = document.getElementById('usuario').value;
+				const crm = document.getElementById('crm').value;
+				const especialidade = document.getElementById('especialidade').value;
+
+				// Obter o próximo ID de médico
+				const maxId = await obterMaxIdMedico();
+
+				const medicoData = {
+					especialidade: especialidade, // Passar a especialidade como descrição
+					crm: crm,
+					usuarioId: parseInt(usuarioId),
+					id: maxId + 1
+				};
+
+				console.log('Dados a serem enviados:', JSON.stringify(medicoData)); // Stringify para verificar JSON
+
+				axios.post('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos', medicoData, {
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(response => {
+					alert('Médico cadastrado com sucesso!');
+					location.reload(); // Recarrega a página após a atualização
+				})
+				.catch(error => {
+					console.error('Erro ao cadastrar médico:', error);
+					if (error.response) {
+						console.error('Detalhes do erro:', error.response.data);
+						errorMessage.textContent = 'Erro ao cadastrar médico: ' + JSON.stringify(error.response.data);
+					} else {
+						errorMessage.textContent = 'Erro ao cadastrar médico: ' + error.message;
+					}
+					errorMessage.style.display = 'block';
+				});
+			});
+
+			document.getElementById('update-button').addEventListener('click', async function() {
+				const usuarioId = document.getElementById('usuario').value;
+				const crm = document.getElementById('crm').value;
+				const especialidade = document.getElementById('especialidade').value;
+
+				const medicoData = {
+					especialidade: especialidade,
+					crm: crm,
+					usuarioId: parseInt(usuarioId),
+					// Assumindo que você tem o ID para a operação de atualização, caso contrário, modifique conforme necessário
+					id: 1 // Exemplo de ID, substitua pela lógica correta de ID
+				};
+
+				console.log('Dados a serem enviados para atualização:', JSON.stringify(medicoData));
+
+				axios.put('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos/' + medicoData.id, medicoData, {
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					}
+				})
+				.then(response => {
+					alert('Médico atualizado com sucesso!');
+				})
+				.catch(error => {
+					console.error('Erro ao atualizar médico:', error);
+					if (error.response) {
+						console.error('Detalhes do erro:', error.response.data);
+						errorMessage.textContent = 'Erro ao atualizar médico: ' + JSON.stringify(error.response.data);
+					} else {
+						errorMessage.textContent = 'Erro ao atualizar médico: ' + error.message;
+					}
+					errorMessage.style.display = 'block';
+				});
+			});
+		});
+    </script>
+</body>
+</html>
