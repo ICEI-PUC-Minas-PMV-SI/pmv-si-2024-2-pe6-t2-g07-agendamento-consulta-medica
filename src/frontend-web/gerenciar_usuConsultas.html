@@ -61,9 +61,9 @@
     </nav>
     <!-- Gerenciar Usuários Section -->
     <section class="container mt-4">
-        <h2>Gerenciar Consultas</h2>
+        <h2>Gerenciar Usuários</h2>
         <div class="mb-3">
-            <button class="btn btn-success" onclick="window.location.href='cadastrar_usuarios.html'">Cadastrar Consulta</button>
+            <button class="btn btn-success" onclick="window.location.href='cadastrar_usuarios.html'">Cadastrar Usuário</button>
         </div>
         <table class="table table-striped">
             <thead>
@@ -118,12 +118,12 @@
 
             idHeader.addEventListener('click', function() {
                 sortAsc = !sortAsc;
-                loadConsulta(sortAsc);
+                loadUsuarios(sortAsc);
             });
 
             // Função para carregar os usuários
             
-            function loadConsulta(sortAsc) { 
+            function loadUsuarios(sortAsc) { 
                 Promise.all([ 
                 fetch('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios', {
                     headers: {
@@ -140,6 +140,38 @@
                     if (Udata.items && Array.isArray(Udata.items) && Cdata.items && Array.isArray(Cdata.items)) {
                         usuariosTable.innerHTML = ''; // Limpa a tabela
                         Udata.items.sort((a, b) => sortAsc ? a.id - b.id : b.id - a.id); // Ordena os itens por ID
+                        Udata.items.forEach(usuario => {
+                            const formattedDate = new Date(usuario.dataNascimento).toLocaleDateString('pt-BR'); // Formata a data
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${usuario.id}</td>
+                                <td contenteditable="true" class="editable">${usuario.nome}</td>
+                                <td contenteditable="true" class="editable">${usuario.cpf}</td>
+                                <td contenteditable="true" class="editable">${usuario.email}</td>
+                                <td contenteditable="true" class="editable">${usuario.telefone}</td>
+                                <td contenteditable="true" class="editable">${formattedDate}</td>
+                                <td class="editable">
+                                    <select>
+                                        <option value="Feminino" ${usuario.sexo === 1 ? 'selected' : ''}>Feminino</option>
+                                        <option value="Masculino" ${usuario.sexo === 2 ? 'selected' : ''}>Masculino</option>
+                                    </select>
+                                </td>
+                                <td class="editable">
+                                    <select>
+                                        <option value="0" ${usuario.perfil === 0 ? 'selected' : ''}>Administrador</option>
+                                        <option value="1" ${usuario.perfil === 1 ? 'selected' : ''}>Médico</option>
+                                        <option value="2" ${usuario.perfil === 2 ? 'selected' : ''}>Paciente</option>
+                                    </select>
+                                </td>
+                                <td contenteditable="true" class="editable">${usuario.senha.slice(0, 8).replace(/./g, '*')}</td>
+                                <td class="action-buttons">
+                                    <button class="btn btn-primary" onclick="updateUsuario(this)">Atualizar</button>
+                                    <button class="btn btn-danger" onclick="deleteUsuario(${usuario.id})">Excluir</button>
+                                </td>
+                            `;
+                            usuariosTable.appendChild(row);
+                        });
+
                         Cdata.items.forEach(consulta => {
                             const dataConsulta = new Date(consulta.dataConsulta).toLocaleDateString('pt-BR'); // Formata a data
                             const row = document.createElement('tr');
@@ -169,7 +201,7 @@
             }
 
             // Função para atualizar o usuário
-            window.updateConsulta = function(button) {
+            window.updateUsuario = function(button) {
                     const row = button.closest('tr');
                     const id = row.cells[0].textContent;
 
@@ -225,7 +257,7 @@
                         if (!response.ok) {
                             throw new Error('Erro ao excluir usuário');
                         }
-                        loadConsulta(); // Recarrega a tabela após a exclusão
+                        loadUsuarios(); // Recarrega a tabela após a exclusão
                     })
                     .catch(error => {
                         console.error('Erro ao excluir usuário:', error);
@@ -236,7 +268,7 @@
             }
 
             // Carrega os usuários ao carregar a página
-            loadConsulta(true);
+            loadUsuarios(true);
         });
 
     </script>
