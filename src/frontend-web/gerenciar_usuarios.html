@@ -3,45 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Usuários - Consulta Fácil</title>
+    <title>Agendar Consulta - Consulta Fácil</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .error-message {
-            color: red;
-            display: none;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #ddd;
-        }
-        .editable {
-            background-color: #fff3cd;
-        }
-        .editable select, .editable input {
-            width: 100%;
-        }
-    </style>
+    <!-- Date Range Picker CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" rel="stylesheet"/>
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
@@ -51,189 +20,298 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="pagina_inicial.html">Página inicial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gerenciar_usuarios.html">Gerenciar Usuários</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Quem somos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pagina_inicial.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Minhas Consultas</a></li>
                     <li class="nav-item"><a class="nav-link" href="paciente.html">Perfil</a></li>
                     <li class="nav-item"><a class="nav-link" id="logout" href="#">Sair</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Gerenciar Usuários Section -->
+
+    <!-- Agendar Consulta Section -->
     <section class="container mt-4">
-        <h2>Gerenciar Usuários</h2>
-        <div class="mb-3">
-            <button class="btn btn-success" onclick="window.location.href='cadastrar_usuarios.html'">Cadastrar Usuário</button>
-	    <button class="btn btn-success" onclick="window.location.href='cadastro_medicos.html'">Cadastrar Especialidade Médica</button>
+        <h2>Filtrar Agenda de Consultas Disponíveis</h2>
+        <form class="mt-4">
+            <!-- Especialidade -->
+            <div class="row mb-3">
+                <label for="especialidade" class="col-sm-2 col-form-label">Especialidade</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="especialidade" required>
+                        <option selected disabled>Selecione a especialidade</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Clínica Geral">Clínica Geral</option>
+                        <option value="Ginecologia">Ginecologia</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Médico -->
+            <div class="row mb-3">
+                <label for="medico" class="col-sm-2 col-form-label">Médico</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="medico" required>
+                        <option selected disabled>Selecione o médico</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Data da Consulta -->
+            <div class="row mb-3">
+                <label for="dataConsulta" class="col-sm-2 col-form-label">Data da Consulta</label>
+                <div class="col-sm-10">
+                    <input type="text" id="dataConsulta" class="form-control" placeholder="Selecione a data" />
+                </div>
+            </div>
+
+            <!-- Botões para Buscar e Limpar Consultas -->
+            <div class="text-center">
+                <button type="button" id="buscarConsultas" class="btn btn-success btn-lg">Buscar Consultas Disponíveis</button>
+                <button type="button" id="limparConsultas" class="btn btn-secondary btn-lg">Limpar Resultados</button>
+            </div>
+        </form>
+
+        <!-- Resultado das Consultas Disponíveis -->
+        <div class="mt-5">
+            <h4>Consultas Disponíveis</h4>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Médico</th>
+                        <th>Especialidade</th>
+                        <th>Agendar</th>
+                    </tr>
+                </thead>
+                <tbody id="consultasDisponiveis">
+                    <!-- Consultas disponíveis serão exibidas aqui -->
+                </tbody>
+            </table>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th id="id-header">ID</th> <!-- Adiciona um ID ao cabeçalho ID -->
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Data de Nascimento</th>
-                    <th>Sexo</th>
-                    <th>Perfil</th>
-                    <th>Senha</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="usuarios-table">
-                <!-- Conteúdo será inserido aqui via JavaScript -->
-            </tbody>
-        </table>
-        <p class="error-message" id="error-message"></p>
     </section>
+
+    <!-- Modal de Confirmação de Agendamento -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Agendamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza de que deseja agendar a consulta com <strong id="medicoModal"></strong> no dia <strong id="dataModal"></strong> às <strong id="horarioModal"></strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="confirmAgendar">Confirmar Agendamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="bg-success text-white text-center py-3 mt-4">
         &copy; 2024 Consulta Fácil - Todos os direitos reservados.
     </footer>
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const token = localStorage.getItem('token');
-            const usuariosTable = document.getElementById('usuarios-table');
-            const errorMessage = document.getElementById('error-message');
-            const idHeader = document.getElementById('id-header'); // Adiciona um ID ao cabeçalho ID
-            let sortAsc = true; // Variável para alternar entre ordenação ascendente e descendente
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Date Range Picker JS -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Axios JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-            idHeader.addEventListener('click', function() {
-                sortAsc = !sortAsc;
-                loadUsuarios(sortAsc);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            const selectEspecialidade = document.getElementById('especialidade');
+            const selectMedico = document.getElementById('medico');
+            const consultasDisponiveis = document.getElementById('consultasDisponiveis');
+            const errorMessage = document.getElementById('error-message');
+
+            console.log('Documento carregado e script inicializado.'); // Log para verificar carregamento do script
+
+            // Inicializar o DateRangePicker como um seletor de data único em PT-BR
+            $('#dataConsulta').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "daysOfWeek": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+                    "monthNames": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+                }
             });
 
-            // Função para carregar os usuários
-            function loadUsuarios(sortAsc) {
-                fetch('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios', {
+            // Função para carregar médicos conforme a especialidade selecionada
+            function carregarMedicosPorEspecialidade(especialidade) {
+                console.log('Carregar médicos para a especialidade:', especialidade); // Log para verificar chamada da função
+                axios.get('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
                 })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.items && Array.isArray(data.items)) {
-                        usuariosTable.innerHTML = ''; // Limpa a tabela
-                        data.items.sort((a, b) => sortAsc ? a.id - b.id : b.id - a.id); // Ordena os itens por ID
-                        data.items.forEach(usuario => {
-                            const formattedDate = new Date(usuario.dataNascimento).toLocaleDateString('pt-BR'); // Formata a data
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td>${usuario.id}</td>
-                                <td contenteditable="true" class="editable">${usuario.nome}</td>
-                                <td contenteditable="true" class="editable">${usuario.cpf}</td>
-                                <td contenteditable="true" class="editable">${usuario.email}</td>
-                                <td contenteditable="true" class="editable">${usuario.telefone}</td>
-                                <td contenteditable="true" class="editable">${formattedDate}</td>
-                                <td class="editable">
-                                    <select>
-                                        <option value="Feminino" ${usuario.sexo === 1 ? 'selected' : ''}>Feminino</option>
-                                        <option value="Masculino" ${usuario.sexo === 2 ? 'selected' : ''}>Masculino</option>
-                                    </select>
-                                </td>
-                                <td class="editable">
-                                    <select>
-                                        <option value="0" ${usuario.perfil === 0 ? 'selected' : ''}>Administrador</option>
-                                        <option value="1" ${usuario.perfil === 1 ? 'selected' : ''}>Médico</option>
-                                        <option value="2" ${usuario.perfil === 2 ? 'selected' : ''}>Paciente</option>
-                                    </select>
-                                </td>
-                                <td contenteditable="true" class="editable">${usuario.senha.slice(0, 8).replace(/./g, '*')}</td>
-                                <td class="action-buttons">
-                                    <button class="btn btn-primary" onclick="updateUsuario(this)">Atualizar</button>
-                                    <button class="btn btn-danger" onclick="deleteUsuario(${usuario.id})">Excluir</button>
-                                </td>
-                            `;
-                            usuariosTable.appendChild(row);
+                .then(function(response) {
+                    const medicos = response.data.items;
+                    const medicosFiltrados = medicos.filter(medico => medico.especialidade === especialidade);
+                    
+                    if (medicosFiltrados.length > 0) {
+                        selectMedico.innerHTML = '<option selected disabled>Selecione o médico</option>';
+                        medicosFiltrados.forEach(medico => {
+                            axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/usuarios/${medico.usuarioId}`, {
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            })
+                            .then(function(usuarioResponse) {
+                                const usuario = usuarioResponse.data;
+                                const option = document.createElement('option');
+                                option.value = medico.id;
+                                option.text = usuario.nome;
+                                option.dataset.especialidade = medico.especialidade;
+                                selectMedico.add(option);
+                            })
+                            .catch(function(error) {
+                                console.error('Erro ao obter dados do usuário:', error);
+                            });
                         });
                     } else {
-                        errorMessage.textContent = 'Formato de dados inválido recebido da API.';
-                        errorMessage.style.display = 'block';
+                        selectMedico.innerHTML = '<option selected disabled>Nenhum médico encontrado</option>';
                     }
                 })
-                .catch(error => {
-                    console.error('Erro ao carregar usuários:', error);
-                    errorMessage.textContent = 'Erro ao carregar usuários. Por favor, tente novamente.';
+                .catch(function(error) {
+                    console.error('Erro ao carregar médicos:', error);
+                    errorMessage.textContent = 'Erro ao carregar médicos. Tente novamente mais tarde.';
+                    errorMessage.style.display = 'block';
+                });
+            }
+            // Função para carregar informações do médico
+            function obterInformacoesMedico(medicoId) {
+                return axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos/${medicoId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+            }
+
+            // Função para carregar horários disponíveis do médico
+            function carregarHorariosDisponiveis(medicoId, dataConsulta) {
+                axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/consultas?medicoId=${medicoId}&data=${dataConsulta}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(function(response) {
+                    const consultas = response.data.items;
+                    consultasDisponiveis.innerHTML = ''; // Limpar resultados anteriores
+
+                    const horariosDisponiveis = gerarHorariosDisponiveis();
+
+                    const medicoSelecionado = selectMedico.options[selectMedico.selectedIndex];
+                    const medicoNome = medicoSelecionado.text;
+                    const especialidadeNome = medicoSelecionado.dataset.especialidade;
+
+                    horariosDisponiveis.forEach(horario => {
+                        const consultaExistente = consultas.find(consulta => consulta.horario === horario);
+                        const buttonState = consultaExistente ? 'disabled' : 'enabled';
+                        const buttonText = consultaExistente ? 'Indisponível' : 'Agendar';
+                        const buttonClass = consultaExistente ? 'btn-secondary' : 'btn-success';
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${dataConsulta}</td>
+                            <td>${horario}</td>
+                            <td>${medicoNome}</td>
+                            <td>${especialidadeNome}</td>
+                            <td><button class="btn ${buttonClass}" ${buttonState}>${buttonText}</button></td>
+                        `;
+                        consultasDisponiveis.appendChild(row);
+                    });
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar horários:', error);
+                    errorMessage.textContent = 'Erro ao carregar horários. Tente novamente mais tarde.';
                     errorMessage.style.display = 'block';
                 });
             }
 
-            // Função para atualizar o usuário
-            window.updateUsuario = function(button) {
-                    const row = button.closest('tr');
-                    const id = row.cells[0].textContent;
-
-                    const dateParts = row.cells[5].textContent.split('/');
-                    const dateObject = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}T00:00:00`);
-                    const dataNascimentoISO = dateObject.toISOString();
-
-
-                    const updatedUser = {
-                        id: id,
-                        nome: row.cells[1].textContent,
-                        cpf: row.cells[2].textContent,
-                        email: row.cells[3].textContent,
-                        senha: row.cells[8].textContent.replace(/\*/g, ''),  // Converte a senha anonimizada de volta
-                        telefone: row.cells[4].textContent,
-                        dataNascimento: dataNascimentoISO,  // Ajusta a data para ISO string
-                        sexo: row.cells[6].querySelector('select').value === 'Feminino' ? 1 : 2,
-                        perfil: parseInt(row.cells[7].querySelector('select').value, 10)
-                    };
-
-                    fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios/${id}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify(updatedUser)
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            return response.text().then(text => { throw new Error(text) });
-                        }
-                        alert('Usuário atualizado com sucesso!');
-                        location.reload();  // Recarrega a página após a atualização
-                    })
-                    .catch(error => {
-                        console.error('Erro ao atualizar usuário:', error);
-                        errorMessage.textContent = 'Erro ao atualizar usuário. Por favor, tente novamente.';
-                        errorMessage.style.display = 'block';
-                    });
-                };
-
-            // Função para excluir o usuário
-            window.deleteUsuario = function(id) {
-                if (confirm('Tem certeza que deseja excluir este usuário?')) {
-                    fetch(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/Usuarios/${id}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Authorization': `Bearer ${token}`
-                        }
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Erro ao excluir usuário');
-                        }
-                        loadUsuarios(); // Recarrega a tabela após a exclusão
-                    })
-                    .catch(error => {
-                        console.error('Erro ao excluir usuário:', error);
-                        errorMessage.textContent = 'Erro ao excluir usuário. Por favor, tente novamente.';
-                        errorMessage.style.display = 'block';
-                    });
-                }
+            // Função para obter o próximo ID de consulta
+            function obterProximoIdConsulta() {
+                return axios.get('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/consultas', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(function(response) {
+                    const consultas = response.data.items;
+                    const maxId = Math.max(...consultas.map(consulta => consulta.id), 0);
+                    return maxId + 1;
+                })
+                .catch(function(error) {
+                    console.error('Erro ao obter o próximo ID de consulta:', error);
+                    throw error;
+                });
             }
 
-            // Carrega os usuários ao carregar a página
-            loadUsuarios(true);
-        });
+            // Função para agendar consulta
+            function agendarConsulta(id, dataConsulta, horaConsulta, usuarioId, medicoId) {
+                return axios.post('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/consultas', {
+                    id: id,
+                    dataConsulta: dataConsulta,
+                    horaConsulta: { ticks: new Date(`${dataConsulta}T${horaConsulta.split(' - ')[0]}`).getTime() * 10000 },
+                    tipo: 0,
+                    usuarioId: usuarioId,
+                    medicoId: medicoId
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+            }
 
+            // Função para exibir modal de confirmação de agendamento
+            function exibirModalConfirmacao(dataConsulta, horario, medicoNome) {
+                document.getElementById('dataModal').textContent = dataConsulta;
+                document.getElementById('horarioModal').textContent = horario;
+                document.getElementById('medicoModal').textContent = medicoNome;
+                $('#confirmModal').modal('show');
+            }
+            // Evento para confirmar agendamento
+            document.getElementById('confirmAgendar').addEventListener('click', function() {
+                const dataConsulta = document.getElementById('dataModal').textContent;
+                const horario = document.getElementById('horarioModal').textContent;
+                const medicoId = selectMedico.value;
+                const usuarioId = /* Obter o ID do usuário logado aqui */;
+
+                obterProximoIdConsulta()
+                    .then(function(proximoId) {
+                        return agendarConsulta(proximoId, dataConsulta, horario, usuarioId, medicoId);
+                    })
+                    .then(function(response) {
+                        alert('Consulta agendada com sucesso!');
+                        $('#confirmModal').modal('hide');
+                    })
+                    .catch(function(error) {
+                        console.error('Erro ao agendar a consulta:', error);
+                        alert('Erro ao agendar a consulta. Tente novamente mais tarde.');
+                    });
+            });
+
+            // Evento para quando o botão Agendar é clicado
+            consultasDisponiveis.addEventListener('click', function(event) {
+                if (event.target && event.target.nodeName == 'BUTTON' && event.target.textContent === 'Agendar') {
+                    const row = event.target.parentNode.parentNode;
+                    const dataConsulta = row.children[0].textContent;
+                    const horario = row.children[1].textContent;
+                    const medicoNome = row.children[2].textContent;
+
+                    exibirModalConfirmacao(dataConsulta, horario, medicoNome);
+                }
+            });
+        });
     </script>
 </body>
 </html>

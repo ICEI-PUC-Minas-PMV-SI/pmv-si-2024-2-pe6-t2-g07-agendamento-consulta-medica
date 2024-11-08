@@ -39,32 +39,28 @@
                 <div class="col-sm-10">
                     <select class="form-select" id="especialidade" required>
                         <option selected disabled>Selecione a especialidade</option>
-                        <option value="1">Cardiologia</option>
-                        <option value="2">Dermatologia</option>
-                        <option value="3">Pediatria</option>
-                        <option value="4">Ortopedia</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Clínica Geral">Clínica Geral</option>
+                        <option value="Ginecologia">Ginecologia</option>
                     </select>
                 </div>
             </div>
-
             <!-- Médico -->
             <div class="row mb-3">
                 <label for="medico" class="col-sm-2 col-form-label">Médico</label>
                 <div class="col-sm-10">
                     <select class="form-select" id="medico" required>
                         <option selected disabled>Selecione o médico</option>
-                        <option value="1">Dr. Marcos Almeida</option>
-                        <option value="2">Dra. Ana Souza</option>
-                        <option value="3">Dr. João Oliveira</option>
                     </select>
                 </div>
             </div>
 
-            <!-- Calendário Interativo para Período da Consulta -->
+            <!-- Data da Consulta -->
             <div class="row mb-3">
-                <label for="calendario" class="col-sm-2 col-form-label">Período da Consulta</label>
+                <label for="dataConsulta" class="col-sm-2 col-form-label">Data da Consulta</label>
                 <div class="col-sm-10">
-                    <input type="text" id="calendario" class="form-control" placeholder="Selecione o período" />
+                    <input type="text" id="dataConsulta" class="form-control" placeholder="Selecione a data" />
                 </div>
             </div>
 
@@ -113,12 +109,10 @@
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="bg-success text-white text-center py-3 mt-4">
         &copy; 2024 Consulta Fácil - Todos os direitos reservados.
     </footer>
-
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
@@ -126,8 +120,146 @@
     <!-- Date Range Picker JS -->
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <!-- Axios JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/marcarconsulta.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            const selectEspecialidade = document.getElementById('especialidade');
+            const selectMedico = document.getElementById('medico');
+            const consultasDisponiveis = document.getElementById('consultasDisponiveis');
+            const errorMessage = document.getElementById('error-message');
+
+            // Inicializar o DateRangePicker como um seletor de data único em PT-BR
+            $('#dataConsulta').daterangepicker({
+                singleDatePicker: true,
+                showDropdowns: true,
+                locale: {
+                    format: 'YYYY-MM-DD',
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "daysOfWeek": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+                    "monthNames": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+                }
+            });
+
+            // Função para carregar médicos conforme a especialidade selecionada
+            function carregarMedicosPorEspecialidade(especialidade) {
+                axios.get('https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(function(response) {
+                    const medicos = response.data.items;
+                    const medicosFiltrados = medicos.filter(medico => medico.especialidade === especialidade);
+                    
+                    if (medicosFiltrados.length > 0) {
+                        selectMedico.innerHTML = '<option selected disabled>Selecione o médico</option>';
+                        medicosFiltrados.forEach(medico => {
+                            axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/usuarios/${medico.usuarioId}`, {
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                }
+                            })
+                            .then(function(usuarioResponse) {
+                                const usuario = usuarioResponse.data;
+                                const option = document.createElement('option');
+                                option.value = medico.id;
+                                option.text = usuario.nome;
+                                option.dataset.especialidade = medico.especialidade;
+                                selectMedico.add(option);
+                            })
+                            .catch(function(error) {
+                                console.error('Erro ao obter dados do usuário:', error);
+                            });
+                        });
+                    } else {
+                        selectMedico.innerHTML = '<option selected disabled>Nenhum médico encontrado</option>';
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar médicos:', error);
+                    errorMessage.textContent = 'Erro ao carregar médicos. Tente novamente mais tarde.';
+                    errorMessage.style.display = 'block';
+                });
+            }
+            // Função para carregar informações do médico
+            function obterInformacoesMedico(medicoId) {
+                return axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/medicos/${medicoId}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+            }
+            // Função para carregar horários disponíveis do médico
+            function carregarHorariosDisponiveis(medicoId, dataConsulta) {
+                axios.get(`https://consultafacil-eyfffgehf5bvesbx.brazilsouth-01.azurewebsites.net/api/consultas?medicoId=${medicoId}&data=${dataConsulta}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                .then(function(response) {
+                    const consultas = response.data.items;
+                    consultasDisponiveis.innerHTML = ''; // Limpar resultados anteriores
+
+                    const horariosDisponiveis = gerarHorariosDisponiveis();
+
+                    const medicoSelecionado = selectMedico.options[selectMedico.selectedIndex];
+                    const medicoNome = medicoSelecionado.text;
+                    const especialidadeNome = medicoSelecionado.dataset.especialidade;
+
+                    horariosDisponiveis.forEach(horario => {
+                        const consultaExistente = consultas.find(consulta => consulta.horario === horario);
+                        const buttonState = consultaExistente ? 'disabled' : 'enabled';
+                        const buttonText = consultaExistente ? 'Indisponível' : 'Agendar';
+                        const buttonClass = consultaExistente ? 'btn-secondary' : 'btn-success';
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${dataConsulta}</td>
+                            <td>${horario}</td>
+                            <td>${medicoNome}</td>
+                            <td>${especialidadeNome}</td>
+                            <td><button class="btn ${buttonClass}" ${buttonState}>${buttonText}</button></td>
+                        `;
+                        consultasDisponiveis.appendChild(row);
+                    });
+                })
+                .catch(function(error) {
+                    console.error('Erro ao carregar horários:', error);
+                    errorMessage.textContent = 'Erro ao carregar horários. Tente novamente mais tarde.';
+                    errorMessage.style.display = 'block';
+                });
+            }
+            // Função para gerar horários disponíveis de 8 às 16 com intervalo de 1 hora
+            function gerarHorariosDisponiveis() {
+                const horarios = [];
+                for (let i = 8; i < 17; i++) {
+                    horarios.push(`${i}:00 - ${i+1}:00`);
+                }
+                return horarios;
+            }
+
+            // Evento para quando a especialidade for selecionada
+            selectEspecialidade.addEventListener('change', function() {
+                const especialidade = selectEspecialidade.value;
+                carregarMedicosPorEspecialidade(especialidade);
+            });
+
+            // Evento para buscar consultas disponíveis
+            document.getElementById('buscarConsultas').addEventListener('click', function() {
+                const medicoId = selectMedico.value;
+                const dataConsulta = document.getElementById('dataConsulta').value;
+                if (medicoId && dataConsulta) {
+                    carregarHorariosDisponiveis(medicoId, dataConsulta);
+                } else {
+                    errorMessage.textContent = 'Por favor, selecione um médico e uma data.';
+                    errorMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
