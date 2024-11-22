@@ -1,6 +1,7 @@
 # Introdução
 
 Com o avanço das tecnologias da informação e comunicação, as soluções digitais têm se mostrado cada vez mais eficazes na otimização de processos e na melhoria do acesso a serviços essenciais. No contexto da saúde pública, a demanda por sistemas que facilitem o agendamento de consultas médicas é crescente, especialmente em Unidades de Pronto Atendimento (UPAs) , onde a procura por atendimentos é intensa e constante. Este trabalho propõe o desenvolvimento de uma solução de um sistema web e mobile voltado para o agendamento de consultas médicas em uma clínica de saúde pública, visando otimizar o processo e garantir maior acessibilidade e eficiência no atendimento.
+
 ## Problema
 
 Atualmente, muitas clínicas públicas enfrentam dificuldades na gestão de agendamentos de consultas médicas, o que resulta em longas filas de espera, dificuldades para marcar consultas e, em alguns casos, na perda de atendimentos por falta de organização e transparência nos processos. O sistema de agendamento tradicional, que geralmente envolve telefonemas ou comparecimento presencial, apresenta várias limitações, como a indisponibilidade de horários, a falta de informações em tempo real e a sobrecarga dos profissionais administrativos. Essas dificuldades impactam diretamente a qualidade do atendimento prestado aos pacientes, que frequentemente enfrentam atrasos e complicações para conseguir uma consulta médica.
@@ -8,18 +9,16 @@ Atualmente, muitas clínicas públicas enfrentam dificuldades na gestão de agen
 ## Objetivos
 
 ### Objetivo geral:
+
 Desenvolver uma solução web e mobile eficiente e acessível para o agendamento de consultas médicas em uma clínica pública, com o intuito de otimizar o processo de marcação, melhorar a gestão de horários e reduzir o tempo de espera dos pacientes.
 
 ### Objetivos específicos:
-1.	Identificar as necessidades dos usuários: Realizar uma análise das necessidades e expectativas dos pacientes e profissionais de saúde em relação ao sistema de agendamento, garantindo que a solução atenda aos requisitos práticos e usuais do público-alvo.
 
-2.	Desenvolver uma interface amigável: Criar uma interface de usuário intuitiva e acessível, que facilite o uso do sistema por pessoas de diferentes idades e níveis de alfabetização digital, promovendo uma experiência positiva e eficiente.
-
-3.	Implementar funcionalidades-chave: Integrar ao sistema funcionalidades essenciais, como a visualização em tempo real de horários disponíveis, a confirmação automática de agendamentos e o envio de lembretes para os pacientes, reduzindo o índice de absenteísmo.
-
-4.	Testar e validar o sistema: Conduzir testes do sistema em um ambiente real, aplicando melhorias baseadas no feedback dos usuários, e assegurar que o sistema funcione de forma eficaz e confiável nas condições de uso previstas.
-
-5.	Garantir a escalabilidade e segurança: Assegurar que a solução seja escalável para atender a diferentes volumes de usuários e que os dados dos pacientes sejam protegidos conforme as normas de segurança e privacidade vigentes.
+1. Identificar as necessidades dos usuários: Realizar uma análise das necessidades e expectativas dos pacientes e profissionais de saúde em relação ao sistema de agendamento, garantindo que a solução atenda aos requisitos práticos e usuais do público-alvo.
+2. Desenvolver uma interface amigável: Criar uma interface de usuário intuitiva e acessível, que facilite o uso do sistema por pessoas de diferentes idades e níveis de alfabetização digital, promovendo uma experiência positiva e eficiente.
+3. Implementar funcionalidades-chave: Integrar ao sistema funcionalidades essenciais, como a visualização em tempo real de horários disponíveis, a confirmação automática de agendamentos e o envio de lembretes para os pacientes, reduzindo o índice de absenteísmo.
+4. Testar e validar o sistema: Conduzir testes do sistema em um ambiente real, aplicando melhorias baseadas no feedback dos usuários, e assegurar que o sistema funcione de forma eficaz e confiável nas condições de uso previstas.
+5. Garantir a escalabilidade e segurança: Assegurar que a solução seja escalável para atender a diferentes volumes de usuários e que os dados dos pacientes sejam protegidos conforme as normas de segurança e privacidade vigentes.
 
 ## Justificativa
 
@@ -55,19 +54,17 @@ Carlos Pereira, 45 anos, é um microempreendedor que mora em um bairro periféri
 
 ## **Histórias de Usuários**
 
-Histórias de usuários são uma das técnicas utilizadas para capturar requisitos e necessidades dos usuários de forma clara e compreensível. Elas descrevem funcionalidades ou características desejadas de um sistema do ponto de vista do usuário final. 
+Histórias de usuários são uma das técnicas utilizadas para capturar requisitos e necessidades dos usuários de forma clara e compreensível. Elas descrevem funcionalidades ou características desejadas de um sistema do ponto de vista do usuário final.
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Paciente   | Receber notificações de confirmação de agendamento para consulta médica|Ter controle dos agendamentos |
-|Paciente   | Receber notificação de lembrete na véspera da consulta|Evitar não comparecimento por esquecimento|
-|Maria da Silva (Usuário paciente)|Receber confirmação de agendamento por SMS   |Confirmação de que o agendamento foi realizado com sucesso. |
-|João dos Santos (Usuário paciente)|Alterar dia e horário do agendamento|Adequar ao horário do usuário paciente|
-|Ana Paula Costa (Usuário paciente)|Consultar histórico das consultas agendadas|Manter frequência de acompanhamento médico no cuidado à saúde|  
-|Carlos Pereira (Usuário paciente)|Consultar status dos agendamentos    |Verificar se agendamento está confirmado antes de se dirigir à consulta|
-|Carlos Pereira (Usuário paciente)|Receber notificação em caso de cancelamento do agendamento    |Permitir reagendamento e evitar perda de tempo ao se dirigir ao local|
-
-
+| EU COMO...`PERSONA`                | QUERO/PRECISO ...`FUNCIONALIDADE`                                          | PARA ...`MOTIVO/VALOR`                                                  |
+| ------------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Paciente                             | Receber notificações de confirmação de agendamento para consulta médica | Ter controle dos agendamentos                                             |
+| Paciente                             | Receber notificação de lembrete na véspera da consulta                    | Evitar não comparecimento por esquecimento                               |
+| Maria da Silva (Usuário paciente)   | Receber confirmação de agendamento por SMS                                 | Confirmação de que o agendamento foi realizado com sucesso.             |
+| João dos Santos (Usuário paciente) | Alterar dia e horário do agendamento                                        | Adequar ao horário do usuário paciente                                  |
+| Ana Paula Costa (Usuário paciente)  | Consultar histórico das consultas agendadas                                 | Manter frequência de acompanhamento médico no cuidado à saúde         |
+| Carlos Pereira (Usuário paciente)   | Consultar status dos agendamentos                                            | Verificar se agendamento está confirmado antes de se dirigir à consulta |
+| Carlos Pereira (Usuário paciente)   | Receber notificação em caso de cancelamento do agendamento                 | Permitir reagendamento e evitar perda de tempo ao se dirigir ao local     |
 
 ## Requisitos
 
@@ -79,34 +76,33 @@ Assim, foram listados os requisitos funcionais considerados imperativos, aconsel
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade | Responsável |
-|------|-----------------------------------------|----|-------- |
-|RF-001| O sistema deve permitir o cadastro de diferentes tipos de usuários (pacientes, médicos e administradores) com validação de dados e envio de confirmação por e-mail. | ALTA | Rafael
-|RF-002| O sistema deve permitir o login seguro de usuários com diferentes níveis de permissão.  | ALTA | Geocacio
-|RF-003| O sistema deve permitir que os usuários marquem, visualizem e gerenciem consultas, com atualizações em tempo real e notificações automáticas sobre qualquer alteração no status das consultas. | ALTA | Guilherme
-|RF-004| O sistema deve enviar lembretes automáticos e personalizáveis de consultas por e-mail e SMS para pacientes e médicos, com opções de configuração de horários de envio. | MÉDIA | João
-|RF-005| O sistema deve gerar relatórios detalhados sobre consultas agendadas, canceladas e realizadas, com filtros interativos, acessíveis aos usuários. | MÉDIA | Felipe
-
+| ID     | Descrição do Requisito                                                                                                                                                                               | Prioridade | Responsável |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | ------------ |
+| RF-001 | O sistema deve permitir o cadastro de diferentes tipos de usuários (pacientes, médicos e administradores) com validação de dados e envio de confirmação por e-mail.                              | ALTA       | Rafael       |
+| RF-002 | O sistema deve permitir o login seguro de usuários com diferentes níveis de permissão.                                                                                                              | ALTA       | Geocacio     |
+| RF-003 | O sistema deve permitir que os usuários marquem, visualizem e gerenciem consultas, com atualizações em tempo real e notificações automáticas sobre qualquer alteração no status das consultas. | ALTA       | Guilherme    |
+| RF-004 | O sistema deve enviar lembretes automáticos e personalizáveis de consultas por e-mail e SMS para pacientes e médicos, com opções de configuração de horários de envio.                         | MÉDIA     | João        |
+| RF-005 | O sistema deve gerar relatórios detalhados sobre consultas agendadas, canceladas e realizadas, com filtros interativos, acessíveis aos usuários.                                                    | MÉDIA     | Felipe       |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A interface deve ser intuitiva, acessível e inclusiva, projetada para usuários com diferentes níveis de familiaridade com tecnologia. | ALTA | 
-|RNF-002| O sistema deve garantir a segurança dos dados pessoais dos usuários em conformidade com a LGPD. | ALTA | 
-|RNF-003| O sistema deve ser responsivo para rodar em dispositivos móveis. | MÉDIA | 
-|RNF-004| Deve processar requisições do usuário em no máximo 3s. |  BAIXA |
-|RNF-005| O sistema deve comportar ao menos 300 usuários acessando simultaneamente. |  BAIXA |
+| ID      | Descrição do Requisito                                                                                                                 | Prioridade |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RNF-001 | A interface deve ser intuitiva, acessível e inclusiva, projetada para usuários com diferentes níveis de familiaridade com tecnologia. | ALTA       |
+| RNF-002 | O sistema deve garantir a segurança dos dados pessoais dos usuários em conformidade com a LGPD.                                        | ALTA       |
+| RNF-003 | O sistema deve ser responsivo para rodar em dispositivos móveis.                                                                        | MÉDIA     |
+| RNF-004 | Deve processar requisições do usuário em no máximo 3s.                                                                               | BAIXA      |
+| RNF-005 | O sistema deve comportar ao menos 300 usuários acessando simultaneamente.                                                               | BAIXA      |
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre. |
-|02| O projeto deverá ter uma versão web. |
-|03| O projeto deverá ter uma versão mobile. |
+| ID | Restrição                                              |
+| -- | -------------------------------------------------------- |
+| 01 | O projeto deverá ser entregue até o final do semestre. |
+| 02 | O projeto deverá ter uma versão web.                   |
+| 03 | O projeto deverá ter uma versão mobile.                |
 
 # Catálogo de Serviços
 
@@ -140,24 +136,23 @@ O catálogo de serviços tem como objetivo organizar, esclarecer e listar as fun
 
 **Camada de Aplicação:**
 **Descrição:** Contém a lógica de negócio do sistema de agendamento de consultas médicas.
-**Tecnologias:** Java, PHP.
+**Tecnologias:** C#.
 **Responsabilidades:** Processar dados de pacientes, aplicar regras de negócios hospitalares, interagir com a camada de dados.
 
 **Camada de Dados:**
 **Descrição:**  Realiza a gestão dos dados da aplicação.
-**Tecnologias:** SQL Server;
+**Tecnologias:** PostgreSQL;
 **Responsabilidades:** Armazenar dados de pacientes, consultas, prontuários médicos, executar consultas, garantir a integridade dos dados.
 
 **Ilustração da arquitetura:**
 
 ![arq](./img/arquitetura.jpg)
 
-
 ## Tecnologias Utilizadas
 
 - C#/ASP .NET Core: Framework utilizado durante todo o desenvolvimento da API que utiliza a linguagem C#;
 - Visual Studio: IDE utlizada junto ao ASP .NET Core;
-Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
+  Entity Framework: Framework utilizado durante o desenvolvimento da aplicação para auxiliar na integração da API ao banco de dados;
 - Postman: Utilizado para testes de requisição para a API.
 - GitHub: Plataforma utilizada para versionamento de versões.
 - Banco de Dados Postgres
